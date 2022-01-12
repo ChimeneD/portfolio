@@ -1,4 +1,5 @@
 import { Context } from '@utils/appContext';
+import '@utils/fonts.css';
 import Cookies from 'js-cookie';
 import React, { useReducer } from 'react';
 import { SnackbarProvider } from 'notistack';

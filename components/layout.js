@@ -15,11 +15,13 @@ import { lightTheme, darkTheme } from '@utils/themes';
 //import { useTheme } from '@material-ui/core/styles';
 import { Context } from '@utils/appContext';
 import Cookies from 'js-cookie';
+import { classes } from '@utils/classes';
 
 const Layout = ({ title, description, children }) => {
   const context = useContext(Context);
   //const router = useRouter();
   const { darkMode } = context.value.state;
+  const theClass = classes();
 
   const handleDarkmode = () => {
     context.value.dispatch({
@@ -50,7 +52,7 @@ const Layout = ({ title, description, children }) => {
             />
           </Toolbar>
         </AppBar>
-        <Container style={{ height: '75vh' }}>{children}</Container>
+        <Container className={theClass.container}>{children}</Container>
       </ThemeProvider>
     </div>
   );

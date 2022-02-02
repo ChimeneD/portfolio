@@ -1,12 +1,15 @@
 import React, { useContext } from 'react';
 import Head from 'next/head';
 import {
-  AppBar,
   Toolbar,
-  Switch,
   //useMediaQuery,
   Container,
   CssBaseline,
+  IconButton,
+  Link,
+  Card,
+  Typography,
+  Divider,
 } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import { lightTheme, darkTheme } from '@utils/themes';
@@ -16,6 +19,13 @@ import { lightTheme, darkTheme } from '@utils/themes';
 import { Context } from '@utils/appContext';
 import Cookies from 'js-cookie';
 import { classes } from '@utils/classes';
+import LightMode from '@mui/icons-material/LightMode';
+import {
+  AlternateEmailRounded,
+  CreateOutlined,
+  DarkMode,
+  HomeOutlined,
+} from '@mui/icons-material';
 
 const Layout = ({ title, description, children }) => {
   const context = useContext(Context);
@@ -40,18 +50,42 @@ const Layout = ({ title, description, children }) => {
         <Head>
           <title>{title ? `${title} | PortFolio` : 'PortFolio'}</title>
           {description && (
-            <meta name='description' content={description}></meta>
+            <meta name="description" content={description}></meta>
           )}
         </Head>
-        <AppBar position='static'>
-          <Toolbar>
-            <Switch
-              onChange={handleDarkmode}
-              checked={darkMode}
-              color='primary'
-            />
-          </Toolbar>
-        </AppBar>
+        <Toolbar>
+          <Typography variant="h1">Logo here</Typography>
+          <section style={{ flexGrow: 1 }}></section>
+          <Card className={theClass.navCard}>
+            <Link
+              underline="none"
+              className={theClass.navLink}
+              component="button"
+            >
+              <HomeOutlined fontSize="small" />
+              Home
+            </Link>
+            <Divider orientation="vertical" variant="middle" flexItem />
+            <Link underline="none" className={theClass.navLink}>
+              <CreateOutlined fontSize="small" />
+              Projects
+            </Link>
+            <Divider orientation="vertical" variant="middle" flexItem />
+            <Link underline="none" className={theClass.navLink}>
+              <AlternateEmailRounded fontSize="small" />
+              Get in touch
+            </Link>
+          </Card>
+          {darkMode ? (
+            <IconButton onClick={handleDarkmode} color="primary">
+              <LightMode />
+            </IconButton>
+          ) : (
+            <IconButton onClick={handleDarkmode} color="primary">
+              <DarkMode />
+            </IconButton>
+          )}
+        </Toolbar>
         <Container className={theClass.container}>{children}</Container>
       </ThemeProvider>
     </div>

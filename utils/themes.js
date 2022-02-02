@@ -7,21 +7,21 @@ export const lightTheme = createTheme({
       fontSize: '1.6rem',
       fontWeight: 400,
       margin: '1rem 0',
-      color: '#4caf50',
+      color: '#448aff',
       fontFamily: 'Josefin Sans',
     },
     h2: {
       fontSize: '1.4rem',
       fontWeight: 400,
       margin: '1rem 0',
-      color: '#4caf50',
+      color: '#448aff',
       fontFamily: 'Josefin Sans',
     },
     h3: {
       fontSize: '1.2rem',
       fontWeight: 400,
       margin: '0',
-      color: '#4caf50',
+      color: '#448aff',
       fontFamily: 'Josefin Sans',
     },
     h4: {
@@ -60,7 +60,7 @@ export const lightTheme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#4caf50',
+      main: '#448aff',
     },
     secondary: {
       main: '#FF8A8A',
@@ -74,42 +74,42 @@ export const darkTheme = createTheme({
       fontSize: '1.6rem',
       fontWeight: 400,
       margin: '1rem 0',
-      color: '#b2ff59',
+      color: '#84ffff',
       fontFamily: 'Josefin Sans',
     },
     h2: {
       fontSize: '1.4rem',
       fontWeight: 400,
       margin: '1rem 0',
-      color: '#b2ff59',
+      color: '#84ffff',
       fontFamily: 'Josefin Sans',
     },
     h3: {
       fontSize: '1.2rem',
       fontWeight: 400,
       margin: '0',
-      color: '#b2ff59',
+      color: '#84ffff',
       fontFamily: 'Josefin Sans',
     },
     h4: {
       fontSize: '1.0rem',
       fontWeight: 500,
       margin: '0',
-      color: '#b2ff59',
+      color: '#84ffff',
       fontFamily: 'Marcellus',
     },
     h5: {
       fontSize: '0.8rem',
       fontWeight: 400,
       margin: '0',
-      color: '#b2ff59',
+      color: '#84ffff',
       fontFamily: 'Josefin Sans',
     },
     h6: {
       fontSize: '0.6rem',
       fontWeight: 400,
       margin: '0',
-      color: '#b2ff59',
+      color: '#84ffff',
       fontFamily: 'Josefin Sans',
     },
     body1: {
@@ -117,7 +117,7 @@ export const darkTheme = createTheme({
       color: '#757575',
     },
     caption: {
-      color: '#b2ff59',
+      color: '#84ffff',
       fontFamily: 'Josefin Sans',
     },
     button: {
@@ -127,7 +127,7 @@ export const darkTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#b2ff59',
+      main: '#84ffff',
     },
     secondary: {
       main: '#FF8A8A',

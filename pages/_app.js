@@ -27,7 +27,8 @@ function MyApp(props) {
   //using the reducer
   const [state, dispatch] = useReducer(reducer, initialState);
   const value = { state, dispatch };
-  const timeout = 1000;
+  const timeout = 3000;
+  const underConstruction = true;
 
   return (
     <CacheProvider value={emotionCache}>
@@ -38,6 +39,7 @@ function MyApp(props) {
           value={{
             value,
             timeout,
+            underConstruction,
           }}
         >
           <Component {...pageProps} />

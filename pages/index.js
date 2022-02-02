@@ -22,7 +22,7 @@ const Home = () => {
   return context.underConstruction ? (
     <Construction />
   ) : loading ? (
-    <Loading />
+    <Loading loading={loading} />
   ) : (
     <Layout title="Home">
       <Box className={theClass.cardContainer}>

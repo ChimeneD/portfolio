@@ -24,7 +24,7 @@ const Loading = () => {
         id="loading"
         className={theClass.animTypewriter}
       >
-        {`<Loading.../>`}
+        Loading...
       </Typography>
       <Typography
         style={{ fontSize: 30, color: '#F4EEFF', fontFamily: 'Comforter' }}
@@ -53,7 +53,7 @@ const Loading = () => {
           }}
           className={theClass.animTypewriter}
         >
-          {`<Loading.../>`}
+          Loading . . .
         </Typography>
         <Typography
           style={{

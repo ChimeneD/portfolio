@@ -1,7 +1,7 @@
 import { Context } from '@utils/appContext';
 import '@utils/fonts.css';
 import Cookies from 'js-cookie';
-import React, { useReducer } from 'react';
+import React, { useReducer, useState } from 'react';
 import { SnackbarProvider } from 'notistack';
 import { CacheProvider } from '@emotion/react';
 import createEmotionCache from '@utils/createEmotionCache';
@@ -27,8 +27,9 @@ function MyApp(props) {
   //using the reducer
   const [state, dispatch] = useReducer(reducer, initialState);
   const value = { state, dispatch };
-  const timeout = 3000;
-  const underConstruction = true;
+  const [activeLink, setActiveLink] = useState('');
+  const timeout = 1000;
+  const underConstruction = false;
 
   return (
     <CacheProvider value={emotionCache}>
@@ -38,6 +39,8 @@ function MyApp(props) {
         <Context.Provider
           value={{
             value,
+            activeLink,
+            setActiveLink,
             timeout,
             underConstruction,
           }}

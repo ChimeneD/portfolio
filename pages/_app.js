@@ -5,6 +5,7 @@ import React, { useReducer, useState } from 'react';
 import { SnackbarProvider } from 'notistack';
 import { CacheProvider } from '@emotion/react';
 import createEmotionCache from '@utils/createEmotionCache';
+import { Toaster } from 'react-hot-toast';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -45,6 +46,7 @@ function MyApp(props) {
             underConstruction,
           }}
         >
+          <Toaster position="top-center" reverseOrder={false} />
           <Component {...pageProps} />
         </Context.Provider>
       </SnackbarProvider>

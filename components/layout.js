@@ -95,16 +95,24 @@ const Layout = ({ title, description, children }) => {
                   <Link
                     underline="none"
                     className={theClass.navLink}
-                    component="button"
+                    href="#about"
                   >
                     About
                   </Link>
                   <Divider orientation="vertical" flexItem />
-                  <Link underline="none" className={theClass.navLink}>
+                  <Link
+                    underline="none"
+                    className={theClass.navLink}
+                    href="#projects"
+                  >
                     Projects
                   </Link>
                   <Divider orientation="vertical" flexItem />
-                  <Link underline="none" className={theClass.navLink}>
+                  <Link
+                    underline="none"
+                    className={theClass.navLink}
+                    href="#contact"
+                  >
                     Get in touch
                   </Link>
                 </Box>

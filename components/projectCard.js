@@ -40,7 +40,12 @@ const ProjectCard = (props) => {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <Link href={props.link} underline="none" className={theClass.navLink}>
+        <Link
+          href={props.link}
+          target="_blank"
+          underline="none"
+          className={theClass.navLink}
+        >
           View Project
         </Link>
       </CardActions>

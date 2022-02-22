@@ -51,7 +51,7 @@ export const lightTheme = createTheme({
     },
     caption: {
       color: '#370665',
-      fontFamily: 'Poiret One',
+      fontFamily: 'Josefin Sans',
     },
     button: {
       fontFamily: 'Poiret One',
@@ -124,7 +124,7 @@ export const darkTheme = createTheme({
     },
     caption: {
       color: '#e8f5e9',
-      fontFamily: 'Poiret One',
+      fontFamily: 'Josefin Sans',
     },
     button: {
       fontFamily: 'Poiret One',

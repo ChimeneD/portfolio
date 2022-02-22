@@ -65,21 +65,26 @@ export const classes = makeStyles((/*theme*/) => ({
     fontSize: 35,
   },
   /* Parallax Classes*/
+  parallax_container: {
+    minHeight: 400,
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   /* Parallax images */
   parallax_about: {
     /* The image used */
     backgroundImage: 'url(/images/about_me_dark.png)',
     /* Set a specific height */
     minHeight: 400,
+    position: 'absolute',
     width: '100%',
     /* Create the parallax scrolling effect */
     backgroundAttachment: 'fixed',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
     opacity: 0.3,
   },
   parallax_project: {
@@ -88,14 +93,12 @@ export const classes = makeStyles((/*theme*/) => ({
     /* Set a specific height */
     minHeight: 400,
     width: '100%',
+    position: 'absolute',
     /* Create the parallax scrolling effect */
     backgroundAttachment: 'fixed',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
     opacity: 0.3,
   },
   parallax_contact: {
@@ -104,14 +107,12 @@ export const classes = makeStyles((/*theme*/) => ({
     /* Set a specific height */
     minHeight: 400,
     width: '100%',
+    position: 'absolute',
     /* Create the parallax scrolling effect */
     backgroundAttachment: 'fixed',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
     opacity: 0.3,
   },
   /* Animation */

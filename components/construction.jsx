@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Layout from './layout';
 import { Card, CircularProgress, Typography } from '@mui/material';
 import dynamic from 'next/dynamic';
-import { classes } from '@utils/classes';
+import { main_class } from '@utils/styles/javascript/main';
 
 const Construction = () => {
-  const theClass = classes();
+  const theClass = main_class();
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);

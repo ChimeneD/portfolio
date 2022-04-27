@@ -2,12 +2,12 @@ import { Context } from '@utils/appContext';
 import React, { useContext } from 'react';
 import dynamic from 'next/dynamic';
 import { Typography } from '@mui/material';
-import { classes } from '@utils/classes';
+import { main_class } from '@utils/styles/javascript/main';
 
 const Loading = () => {
   const context = useContext(Context);
   const { darkMode } = context.value.state;
-  const theClass = classes();
+  const theClass = main_class();
   return darkMode ? (
     <section
       style={{

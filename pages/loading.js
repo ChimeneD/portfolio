@@ -2,7 +2,7 @@ import { Context } from '@utils/appContext';
 import React, { useContext } from 'react';
 import dynamic from 'next/dynamic';
 import { Typography } from '@mui/material';
-import { classes } from '@utils/classes';
+import { classes } from '@utils/styles/javascript/main';
 
 const Loading = () => {
   const context = useContext(Context);
@@ -21,14 +21,14 @@ const Loading = () => {
     >
       <Typography
         style={{ color: '#F4EEFF', fontFamily: 'Comforter' }}
-        id="loading"
+        id='loading'
         className={theClass.animTypewriter}
       >
         Loading...
       </Typography>
       <Typography
         style={{ fontSize: 30, color: '#F4EEFF', fontFamily: 'Comforter' }}
-        id="loading"
+        id='loading'
         className={theClass.blink}
       >
         _

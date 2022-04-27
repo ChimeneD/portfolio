@@ -1,6 +1,26 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useContext, useEffect, useState } from 'react';
+import React from 'react';
+import dynamic from 'next/dynamic';
 import Layout from '@components/layout';
+import Header from '@components/pages/header';
+import About from '@components/pages/about';
+import Skills from '@components/pages/skills';
+import Portfolio from '@components/pages/portfolio';
+import Contact from '@components/pages/contacts';
+
+const Home = () => {
+  return (
+    <Layout>
+      <Header />
+      <About />
+      <Skills />
+      <Portfolio />
+      <Contact />
+    </Layout>
+  );
+};
+
+/*import React, { useContext, useEffect, useState } from 'react';
 import {
   Box,
   Button,
@@ -11,7 +31,6 @@ import {
   Typography,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import dynamic from 'next/dynamic';
 import { classes } from '@utils/classes';
 import { Context } from '@utils/appContext';
 import Loading from '@components/loading';
@@ -322,6 +341,6 @@ const Home = () => {
       </Card>
     </Layout>
   );
-};
+};*/
 
 export default dynamic(() => Promise.resolve(Home), { ssr: false });

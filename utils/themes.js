@@ -1,66 +1,71 @@
 import { createTheme } from '@mui/material/styles';
-
+import { colors } from './styles/colors';
+import { font_family } from './styles/fonts';
+//colors
+const { background_light, background_dark, dark_brown, primary_light } = colors;
+//fonts
+const { heading, subheading, caption, button } = font_family;
 //Light Theme
 export const lightTheme = createTheme({
   typography: {
     h1: {
-      fontSize: '1.6rem',
-      fontWeight: 400,
+      fontSize: '2.5rem',
+      fontWeight: 500,
       margin: '1rem 0',
-      color: '#370665',
-      fontFamily: 'Poiret One',
+      color: dark_brown,
+      fontFamily: heading,
     },
     h2: {
       fontSize: '1.4rem',
-      fontWeight: 400,
+      fontWeight: 500,
       margin: '1rem 0',
-      color: '#370665',
-      fontFamily: 'Poiret One',
+      color: dark_brown,
+      fontFamily: heading,
     },
     h3: {
       fontSize: '1.2rem',
-      fontWeight: 400,
+      fontWeight: 500,
       margin: '0',
-      color: '#370665',
-      fontFamily: 'Poiret One',
+      color: dark_brown,
+      fontFamily: heading,
     },
     h4: {
       fontSize: '1.0rem',
       fontWeight: 500,
       margin: '0',
-      color: '#370665',
-      fontFamily: 'Marcellus',
+      color: dark_brown,
+      fontFamily: subheading,
     },
     h5: {
       fontSize: '0.8rem',
-      fontWeight: 400,
+      fontWeight: 500,
       margin: '0',
-      color: '#370665',
-      fontFamily: 'Poiret One',
+      color: dark_brown,
+      fontFamily: heading,
     },
     h6: {
       fontSize: '0.6rem',
-      fontWeight: 400,
+      fontWeight: 500,
       margin: '0',
-      color: '#370665',
-      fontFamily: 'Poiret One',
+      color: dark_brown,
+      fontFamily: heading,
     },
     body1: {
-      fontFamily: 'Poiret One',
+      fontFamily: heading,
       color: '#757575',
     },
     caption: {
-      color: '#370665',
-      fontFamily: 'Josefin Sans',
+      color: dark_brown,
+      fontFamily: caption,
     },
     button: {
-      fontFamily: 'Poiret One',
+      fontFamily: button,
     },
   },
   palette: {
     mode: 'light',
     primary: {
-      main: '#370665',
+      main: dark_brown,
     },
     secondary: {
       main: '#263238',
@@ -71,69 +76,72 @@ export const lightTheme = createTheme({
     info: {
       main: '#1de9b6',
     },
+    background: {
+      default: background_light,
+    },
   },
 });
 //Dark Theme
 export const darkTheme = createTheme({
   typography: {
     h1: {
-      fontSize: '1.6rem',
-      fontWeight: 400,
+      fontSize: '2.5rem',
+      fontWeight: 500,
       margin: '1rem 0',
-      color: '#e8f5e9',
-      fontFamily: 'Poiret One',
+      color: primary_light,
+      fontFamily: heading,
     },
     h2: {
       fontSize: '1.4rem',
-      fontWeight: 400,
+      fontWeight: 500,
       margin: '1rem 0',
-      color: '#e8f5e9',
-      fontFamily: 'Poiret One',
+      color: primary_light,
+      fontFamily: heading,
     },
     h3: {
       fontSize: '1.2rem',
-      fontWeight: 400,
+      fontWeight: 500,
       margin: '0',
-      color: '#e8f5e9',
-      fontFamily: 'Poiret One',
+      color: primary_light,
+      fontFamily: heading,
     },
     h4: {
       fontSize: '1.0rem',
       fontWeight: 500,
       margin: '0',
-      color: '#e8f5e9',
-      fontFamily: 'Marcellus',
+      color: primary_light,
+      fontFamily: subheading,
     },
     h5: {
       fontSize: '0.8rem',
-      fontWeight: 400,
+      fontWeight: 500,
       margin: '0',
-      color: '#e8f5e9',
-      fontFamily: 'Poiret One',
+      color: primary_light,
+      fontFamily: heading,
     },
     h6: {
       fontSize: '0.6rem',
-      fontWeight: 400,
+      fontWeight: 500,
       margin: '0',
-      color: '#e8f5e9',
-      fontFamily: 'Poiret One',
+      color: primary_light,
+      fontFamily: heading,
     },
     body1: {
-      fontFamily: 'Poiret One',
+      fontFamily: heading,
       color: '#757575',
     },
     caption: {
-      color: '#e8f5e9',
-      fontFamily: 'Josefin Sans',
+      color: primary_light,
+      fontFamily: caption,
     },
     button: {
-      fontFamily: 'Poiret One',
+      fontFamily: button,
     },
   },
   palette: {
     mode: 'dark',
     primary: {
-      main: '#e8f5e9',
+      main: primary_light,
     },
     secondary: {
       main: '#f4ff81',
@@ -143,6 +151,9 @@ export const darkTheme = createTheme({
     },
     info: {
       main: '#b3e5fc',
+    },
+    background: {
+      default: background_dark,
     },
   },
 });

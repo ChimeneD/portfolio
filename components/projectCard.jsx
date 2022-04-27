@@ -10,10 +10,10 @@ import {
   Link,
   Typography,
 } from '@mui/material';
-import { classes } from '@utils/classes';
+import { main_class } from '@utils/styles/javascript/main';
 
 const ProjectCard = (props) => {
-  const theClass = classes();
+  const theClass = main_class();
   return (
     <Card raised className={theClass.projectCard}>
       <CardHeader

@@ -1,5 +1,5 @@
 import { Context } from '@utils/appContext';
-import '@utils/fonts.css';
+import '@utils/styles/css/main.css';
 import Cookies from 'js-cookie';
 import React, { useReducer, useState } from 'react';
 import { SnackbarProvider } from 'notistack';
@@ -46,7 +46,7 @@ function MyApp(props) {
             underConstruction,
           }}
         >
-          <Toaster position="top-center" reverseOrder={false} />
+          <Toaster position='top-center' reverseOrder={false} />
           <Component {...pageProps} />
         </Context.Provider>
       </SnackbarProvider>

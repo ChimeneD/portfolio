@@ -4,7 +4,8 @@ const container_width_lg = '75%';
 const container_width_md = '86%';
 const container_width_sm = '90%';
 
-const { text_light, text_dark } = colors;
+const { text_light, text_dark, background_dark_two, background_light_two } =
+  colors;
 export const main_class = makeStyles((theme) => ({
   '@global': {
     '*::-webkit-scrollbar': {
@@ -14,7 +15,7 @@ export const main_class = makeStyles((theme) => ({
       background: 'transparent',
     },
     '*::-webkit-scrollbar-thumb': {
-      background: '#616161',
+      background: theme.palette.primary.main,
     },
   },
 
@@ -33,7 +34,7 @@ export const main_class = makeStyles((theme) => ({
   btn: {
     width: 'max-content',
     display: 'inline-block',
-    padding: '0.75rem 1.2rem',
+    padding: '0.5rem 1rem',
     borderRadius: '0.4rem',
     cursor: 'pointer',
     border: `2px solid ${theme.palette.primary.main}`,
@@ -42,11 +43,21 @@ export const main_class = makeStyles((theme) => ({
   btn_contained: {
     color: theme.palette.mode === 'light' ? text_light : text_dark,
     background: theme.palette.primary.main,
-    '&:hover': {},
+    '&:hover': {
+      background:
+        theme.palette.mode === 'light'
+          ? background_dark_two
+          : background_light_two,
+    },
   },
   btn_outlined: {
     color: theme.palette.primary.main,
     background: 'transparent',
-    '&:hover': {},
+    '&:hover': {
+      background:
+        theme.palette.mode === 'light'
+          ? background_dark_two
+          : background_light_two,
+    },
   },
 }));

@@ -1,23 +1,48 @@
 import { makeStyles } from '@mui/styles';
 import { colors } from '../colors';
-
 const { text_light, text_dark, background_dark_two, background_light_two } =
   colors;
-export const header_classes = makeStyles((theme) => ({
+
+export const nav_classes = makeStyles((theme) => ({
   '@global': {
-    header: {
-      height: '100vh',
-      overflow: 'hidden',
-      paddingTop: '7rem',
-      //medium screen
-      [theme.breakpoints.down('lg')]: {
-        height: '65vh',
-      },
-      //small screen
-      [theme.breakpoints.down('md')]: {
-        height: '100vh',
+    nav: {
+      background:
+        theme.palette.mode === 'light' ? 'rgba(0,0,0,0.3)' : 'rgba(1,1,1,0.3)',
+      width: 'maximum-content',
+      padding: '0.7rem 1.7rem',
+      zIndex: 2,
+      position: 'fixed',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      bottom: '2rem',
+      display: 'flex',
+      gap: '0.8rem',
+      borderRadius: '1.2rem',
+      backdropFilter: 'blur(15px)',
+      '& a': {
+        color: theme.palette.primary.main,
+        background: 'transparent',
+        display: 'flex',
+        justifyContent: 'center',
+        fontSize: 18,
+        padding: '0.5rem',
+        borderRadius: '50%',
+        '&:hover': {
+          color: theme.palette.mode === 'light' ? text_dark : text_light,
+          background:
+            theme.palette.mode === 'light'
+              ? background_light_two
+              : background_dark_two,
+        },
       },
     },
+  },
+  active: {
+    color: theme.palette.mode === 'light' ? text_dark : text_light,
+    background:
+      theme.palette.mode === 'light'
+        ? background_light_two
+        : background_dark_two,
   },
   header_container: {
     textAlign: 'center',
@@ -27,7 +52,7 @@ export const header_classes = makeStyles((theme) => ({
   cta: {
     marginTop: '2.5rem',
     display: 'flex',
-    gap: '2rem',
+    gap: '1rem',
     justifyContent: 'center',
   },
   header_socials: {
@@ -50,21 +75,17 @@ export const header_classes = makeStyles((theme) => ({
       display: 'flex',
       justifyContent: 'center',
       padding: '0.5rem',
-      fontSize: 20,
       borderRadius: '50%',
       '&:hover': {
         color: theme.palette.mode === 'light' ? text_dark : text_light,
-        background:
-          theme.palette.mode === 'light'
-            ? background_light_two
-            : background_dark_two,
+        background: theme.palette.mode === 'light' ? text_dark : text_light,
       },
     },
   },
   scroll_down: {
     position: 'absolute',
     bottom: '10rem',
-    right: '-2.3rem',
+    right: 0,
     transform: 'rotate(90deg)',
     color: theme.palette.primary.main,
     '&:hover': {

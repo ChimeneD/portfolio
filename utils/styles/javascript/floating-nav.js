@@ -1,7 +1,11 @@
 import { makeStyles } from '@mui/styles';
 import { colors } from '../colors';
-const { text_light, text_dark, background_dark_two, background_light_two } =
-  colors;
+const {
+  text_light,
+  text_dark,
+  background_variant_dark,
+  background_variant_light,
+} = colors;
 
 export const nav_classes = makeStyles((theme) => ({
   '@global': {
@@ -31,8 +35,8 @@ export const nav_classes = makeStyles((theme) => ({
           color: theme.palette.mode === 'light' ? text_dark : text_light,
           background:
             theme.palette.mode === 'light'
-              ? background_light_two
-              : background_dark_two,
+              ? background_variant_light
+              : background_variant_dark,
         },
       },
     },
@@ -41,8 +45,8 @@ export const nav_classes = makeStyles((theme) => ({
     color: theme.palette.mode === 'light' ? text_dark : text_light,
     background:
       theme.palette.mode === 'light'
-        ? background_light_two
-        : background_dark_two,
+        ? background_variant_light
+        : background_variant_dark,
   },
   header_container: {
     textAlign: 'center',

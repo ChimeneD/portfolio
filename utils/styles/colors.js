@@ -1,7 +1,7 @@
 export const colors = {
   //light colors
   background_light: '#F7F3F3',
-  background_light_two: '',
+  background_variant_light: '',
   primary_light: '#C2F9FF',
   secondary_light: '',
   tertiary_light: '',
@@ -13,7 +13,7 @@ export const colors = {
   text_light: '#F7F3F3',
   //dark colors
   background_dark: '#06090E',
-  background_dark_two: '#30323D',
+  background_variant_dark: '#30323D',
   primary_dark: '',
   secondary_dark: '#0F7173',
   tertiary_dark: '#F1DACA',

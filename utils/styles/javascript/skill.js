@@ -15,7 +15,7 @@ export const skill_classes = makeStyles((theme) => ({
           : background_variant_dark,
       padding: '4rem 5rem',
       borderRadius: '1rem',
-      border: '1px solid transparent',
+      border: '2px solid transparent',
       transition: 'all 500ms ease',
       '&:hover': {
         background: 'transparent',

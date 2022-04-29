@@ -6,4 +6,5 @@ export const font_family = {
   caption: 'Raleway',
   link: 'Raleway',
   button: 'Dosis',
+  display: 'Patrick Hand SC',
 };

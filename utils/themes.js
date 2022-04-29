@@ -4,16 +4,16 @@ import { font_family } from './styles/fonts';
 //colors
 const { background_light, background_dark, dark_brown, primary_light } = colors;
 //fonts
-const { heading, subheading, caption, button } = font_family;
+const { heading, subheading, caption, button, display } = font_family;
 //Light Theme
 export const lightTheme = createTheme({
   typography: {
     h1: {
-      fontSize: '2.5rem',
+      fontSize: '4rem',
       fontWeight: 500,
       margin: '1rem 0',
       color: dark_brown,
-      fontFamily: heading,
+      fontFamily: display,
     },
     h2: {
       fontSize: '1.4rem',
@@ -85,11 +85,11 @@ export const lightTheme = createTheme({
 export const darkTheme = createTheme({
   typography: {
     h1: {
-      fontSize: '2.5rem',
+      fontSize: '4rem',
       fontWeight: 500,
       margin: '1rem 0',
       color: primary_light,
-      fontFamily: heading,
+      fontFamily: display,
     },
     h2: {
       fontSize: '1.4rem',

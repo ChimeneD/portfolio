@@ -22,7 +22,6 @@ body {
 
 section {
   margin-top: 8rem;
-  min-height: 100vh;
 }
 
 section > h2, section > h5 {
@@ -30,7 +29,7 @@ section > h2, section > h5 {
 }
 
 section > h2 {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 a {

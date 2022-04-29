@@ -13,7 +13,9 @@ const About = () => {
   return (
     <section id='about'>
       <Typography variant='h5'>Get to know me</Typography>
-      <Typography variant='h2'>About Me</Typography>
+      <Typography variant='h2' style={{ marginBottom: '4rem' }}>
+        About Me
+      </Typography>
       <div className={`${classes.container} ${about_class.about_container}`}>
         <div className={about_class.about_me}>
           <div className={about_class.about_me_image}>

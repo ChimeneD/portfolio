@@ -7,6 +7,7 @@ export const about_classes = makeStyles((theme) => ({
     display: 'grid',
     gridTemplateColumns: '35% 50%',
     gap: '15%',
+    alignContent: 'center',
     //medium screen
     [theme.breakpoints.down('lg')]: {
       gridTemplateColumns: '1fr',

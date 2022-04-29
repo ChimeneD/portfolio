@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { GoHome } from 'react-icons/go';
 import { VscFolderLibrary } from 'react-icons/vsc';
-import { RiMessage2Line, RiUserLine } from 'react-icons/ri';
+import {
+  RiMessage2Line,
+  RiUserLine,
+  RiCustomerService2Fill,
+} from 'react-icons/ri';
 import { IoBrushOutline } from 'react-icons/io5';
 
 import { nav_classes } from '@utils/styles/javascript/floating-nav';
@@ -31,6 +35,13 @@ const FloatingNav = () => {
         onClick={() => setActiveLink('#skills')}
       >
         <IoBrushOutline />
+      </a>
+      <a
+        href='#services'
+        className={`${activeLink === '#services' ? nav_class.active : ''}`}
+        onClick={() => setActiveLink('#services')}
+      >
+        <RiCustomerService2Fill />
       </a>
       <a
         href='#portfolio'

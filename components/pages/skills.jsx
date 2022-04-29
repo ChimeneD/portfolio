@@ -9,7 +9,7 @@ const Skills = () => {
   const skill_class = skill_classes();
   return (
     <section id='skills'>
-      <Typography variant='h5'>What skill do I have?</Typography>
+      <Typography variant='h5'>What skills do I have?</Typography>
       <Typography variant='h2' style={{ marginBottom: '4rem' }}>
         My Skills
       </Typography>

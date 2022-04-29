@@ -12,7 +12,7 @@ const About = () => {
   const about_class = about_classes();
   return (
     <section id='about'>
-      <Typography variant='h5'>Get to know me</Typography>
+      <Typography variant='h5'>What about me?</Typography>
       <Typography variant='h2' style={{ marginBottom: '4rem' }}>
         About Me
       </Typography>

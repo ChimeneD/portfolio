@@ -20,7 +20,9 @@ const Header = () => {
     <header>
       <div className={`${classes.container} ${header_class.header_container}`}>
         <Typography variant='h5'>Hi I'm</Typography>
-        <Typography variant='h1'>Daniel .C. Amadi</Typography>
+        <Typography variant='h1' className={header_class.name}>
+          Daniel .C. Amadi
+        </Typography>
         <Typography variant='h5'>Fullstack Developer</Typography>
 
         <div className={header_class.cta}>

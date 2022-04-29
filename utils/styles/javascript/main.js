@@ -39,6 +39,10 @@ export const main_class = makeStyles((theme) => ({
     cursor: 'pointer',
     border: `2px solid ${theme.palette.primary.main}`,
     transition: 'all 400ms ease',
+    //small screen
+    [theme.breakpoints.down('md')]: {
+      padding: '0.3rem 0.8rem',
+    },
   },
   btn_contained: {
     color: theme.palette.mode === 'light' ? text_light : text_dark,

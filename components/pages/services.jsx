@@ -11,7 +11,9 @@ const Services = () => {
   return (
     <section id='services'>
       <Typography variant='h5'>What services do I offer?</Typography>
-      <Typography variant='h2'>My Services</Typography>
+      <Typography variant='h2' style={{ marginBottom: '4rem' }}>
+        My Services
+      </Typography>
       <div
         className={`${classes.container} ${service_class.service_container}`}
       >

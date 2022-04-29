@@ -12,6 +12,16 @@ export const service_classes = makeStyles((theme) => ({
     display: 'grid',
     gridTemplateColumns: 'repeat(3, 1fr)',
     gap: '3rem',
+    //medium screen
+    [theme.breakpoints.down('lg')]: {
+      gridTemplateColumns: '1fr 1fr',
+      gap: '2rem',
+    },
+    //small screen
+    [theme.breakpoints.down('md')]: {
+      gridTemplateColumns: '1fr',
+      gap: '1.5rem',
+    },
   },
   services: {
     background:
@@ -26,6 +36,10 @@ export const service_classes = makeStyles((theme) => ({
       background: 'transparent',
       borderColor: theme.palette.primary.main,
       cursor: 'default',
+    },
+    //medium screen
+    [theme.breakpoints.down('lg')]: {
+      height: 'auto',
     },
   },
   service_header: {
@@ -46,9 +60,20 @@ export const service_classes = makeStyles((theme) => ({
       display: 'flex',
       gap: '1rem',
       marginBottom: '0.8rem',
+      color: theme.palette.secondary.main,
     },
     '& p': {
       fontSize: '0.9rem',
+      //small screen
+      [theme.breakpoints.down('lg')]: {
+        fontSize: '0.8rem',
+        marginTop: '0.3rem',
+      },
+      //small screen
+      [theme.breakpoints.down('md')]: {
+        fontSize: '0.6rem',
+        marginTop: '0.3rem',
+      },
     },
   },
   service_list_icon: {

@@ -28,6 +28,12 @@ export const header_classes = makeStyles((theme) => ({
     height: '100%',
     position: 'relative',
   },
+  name: {
+    //small screen
+    [theme.breakpoints.down('md')]: {
+      fontSize: '3rem',
+    },
+  },
   cta: {
     marginTop: '2.5rem',
     display: 'flex',
@@ -42,6 +48,10 @@ export const header_classes = makeStyles((theme) => ({
     position: 'absolute',
     bottom: '5rem',
     left: 0,
+    //small screen
+    [theme.breakpoints.down('md')]: {
+      display: 'none',
+    },
     '&::after': {
       content: '""',
       width: '2px',
@@ -72,7 +82,11 @@ export const header_classes = makeStyles((theme) => ({
     transform: 'rotate(90deg)',
     color: theme.palette.primary.main,
     '&:hover': {
-      color: theme.palette.mode === 'light' ? text_dark : text_light,
+      color: theme.palette.secondary.main,
+    },
+    //small screen
+    [theme.breakpoints.down('md')]: {
+      fontSize: '13px',
     },
   },
 }));

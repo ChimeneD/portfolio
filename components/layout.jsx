@@ -35,7 +35,7 @@ const Layout = ({ title, description, children }) => {
               onClick={handleDarkmode}
               color='primary'
               size='small'
-              style={{ position: 'absolute', top: '1rem', right: '1rem' }}
+              style={{ position: 'fixed', top: '1rem', right: '1rem' }}
             >
               <LightMode fontSize='small' />
             </IconButton>
@@ -46,7 +46,7 @@ const Layout = ({ title, description, children }) => {
               onClick={handleDarkmode}
               color='primary'
               size='small'
-              style={{ position: 'absolute', top: '1rem', right: '1rem' }}
+              style={{ position: 'fixed', top: '1rem', right: '1rem' }}
             >
               <DarkMode fontSize='small' />
             </IconButton>

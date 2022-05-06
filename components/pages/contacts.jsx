@@ -9,7 +9,9 @@ const Contacts = () => {
   return (
     <section id='contact'>
       <Typography variant='h5'>How can you reach me?</Typography>
-      <Typography variant='h2'>My Contact</Typography>
+      <Typography variant='h2' style={{ marginBottom: '4rem' }}>
+        My Contact
+      </Typography>
       <div
         className={`${classes.container} ${contact_class.contact_container}`}
       ></div>

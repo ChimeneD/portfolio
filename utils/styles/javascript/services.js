@@ -13,12 +13,12 @@ export const service_classes = makeStyles((theme) => ({
     gridTemplateColumns: 'repeat(3, 1fr)',
     gap: '3rem',
     //medium screen
-    [theme.breakpoints.down('lg')]: {
+    [theme.breakpoints.down('md')]: {
       gridTemplateColumns: '1fr 1fr',
       gap: '2rem',
     },
     //small screen
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       gridTemplateColumns: '1fr',
       gap: '1.5rem',
     },
@@ -38,7 +38,7 @@ export const service_classes = makeStyles((theme) => ({
       cursor: 'default',
     },
     //medium screen
-    [theme.breakpoints.down('lg')]: {
+    [theme.breakpoints.down('md')]: {
       height: 'auto',
     },
   },
@@ -64,13 +64,13 @@ export const service_classes = makeStyles((theme) => ({
     },
     '& p': {
       fontSize: '0.9rem',
-      //small screen
-      [theme.breakpoints.down('lg')]: {
+      //medium screen
+      [theme.breakpoints.down('md')]: {
         fontSize: '0.8rem',
         marginTop: '0.3rem',
       },
       //small screen
-      [theme.breakpoints.down('md')]: {
+      [theme.breakpoints.down('sm')]: {
         fontSize: '0.6rem',
         marginTop: '0.3rem',
       },

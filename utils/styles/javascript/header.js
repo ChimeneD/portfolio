@@ -14,11 +14,11 @@ export const header_classes = makeStyles((theme) => ({
       overflow: 'hidden',
       paddingTop: '7rem',
       //medium screen
-      [theme.breakpoints.down('lg')]: {
+      [theme.breakpoints.down('md')]: {
         height: '65vh',
       },
       //small screen
-      [theme.breakpoints.down('md')]: {
+      [theme.breakpoints.down('sm')]: {
         height: '100vh',
       },
     },
@@ -30,7 +30,7 @@ export const header_classes = makeStyles((theme) => ({
   },
   name: {
     //small screen
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       fontSize: '3rem',
     },
   },
@@ -49,7 +49,7 @@ export const header_classes = makeStyles((theme) => ({
     bottom: '5rem',
     left: 0,
     //small screen
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       display: 'none',
     },
     '&::after': {
@@ -85,7 +85,7 @@ export const header_classes = makeStyles((theme) => ({
       color: theme.palette.secondary.main,
     },
     //small screen
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       fontSize: '13px',
     },
   },

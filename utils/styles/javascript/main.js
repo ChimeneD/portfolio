@@ -23,11 +23,11 @@ export const main_class = makeStyles((theme) => ({
     width: container_width_lg,
     margin: '0 auto',
     //medium screen
-    [theme.breakpoints.down('lg')]: {
+    [theme.breakpoints.down('md')]: {
       width: container_width_md,
     },
     //small screen
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       width: container_width_sm,
     },
   },
@@ -40,7 +40,7 @@ export const main_class = makeStyles((theme) => ({
     border: `2px solid ${theme.palette.primary.main}`,
     transition: 'all 400ms ease',
     //small screen
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       padding: '0.3rem 0.8rem',
     },
   },

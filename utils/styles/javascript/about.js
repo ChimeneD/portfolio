@@ -9,12 +9,12 @@ export const about_classes = makeStyles((theme) => ({
     gap: '15%',
     alignContent: 'center',
     //medium screen
-    [theme.breakpoints.down('lg')]: {
+    [theme.breakpoints.down('md')]: {
       gridTemplateColumns: '1fr',
       gap: 0,
     },
     //small screen
-    [theme.breakpoints.down('md')]: {},
+    [theme.breakpoints.down('sm')]: {},
   },
 
   about_me: {
@@ -24,12 +24,12 @@ export const about_classes = makeStyles((theme) => ({
     display: 'grid',
     placeItems: 'center',
     padding: '0.4rem', //medium screen
-    [theme.breakpoints.down('lg')]: {
+    [theme.breakpoints.down('md')]: {
       width: '50%',
       margin: '2rem auto 4rem',
     },
     //small screen
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       width: '65%',
       margin: '1rem auto 3rem',
     },
@@ -48,18 +48,18 @@ export const about_classes = makeStyles((theme) => ({
     justifyContent: 'center',
     flexDirection: 'column',
     //small screen
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       textAlign: 'center',
     },
     '& p': {
       margin: '2rem 0 2.6rem',
       color: theme.palette.secondary.main,
       //medium screen
-      [theme.breakpoints.down('lg')]: {
+      [theme.breakpoints.down('md')]: {
         margin: '1rem 0 1.5rem',
       },
       //small screen
-      [theme.breakpoints.down('md')]: {
+      [theme.breakpoints.down('sm')]: {
         margin: '1.5rem 0',
         fontSize: '13px',
       },
@@ -70,7 +70,7 @@ export const about_classes = makeStyles((theme) => ({
     gridTemplateColumns: 'repeat(3, 1fr)',
     gap: '1.5rem',
     //small screen
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       gridTemplateColumns: '1fr 1fr',
       gap: '1rem',
     },

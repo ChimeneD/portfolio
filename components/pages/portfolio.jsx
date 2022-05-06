@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import { Typography } from '@mui/material';
@@ -7,6 +8,22 @@ import { portfolio_classes } from '@utils/styles/javascript/portfolio';
 const Portfolio = () => {
   const classes = main_class();
   const portfolio_class = portfolio_classes();
+  const data = [
+    {
+      id: 1,
+      image: '',
+      title: 'Ouicestnous Website',
+      github_repo: '',
+      demo_link: 'ouicestnous.netlify.app',
+    },
+    {
+      id: 2,
+      image: '',
+      title: 'Matchoice E-Commerce Website',
+      github_repo: '',
+      demo_link: 'matchoice.netlify.app',
+    },
+  ];
   return (
     <section id='portfolio'>
       <Typography variant='h5'>What are my recent projects?</Typography>
@@ -16,87 +33,37 @@ const Portfolio = () => {
       <div
         className={`${classes.container} ${portfolio_class.portfolio_container}`}
       >
-        <article className={portfolio_class.portfolio_item}>
-          <div className={portfolio_class.portfolio_image}>
-            <img src='/images/ecommerce.jpg' alt='project-img' />
-          </div>
-          <Typography
-            variant='h3'
-            className={portfolio_class.portfolio_heading}
-          >
-            Ouicestnous
-          </Typography>
-          <div className={portfolio_class.portfolio_cta}>
-            <a
-              href=''
-              className={`${classes.btn} ${classes.btn_outlined}`}
-              target='_blank'
-            >
-              Github Repo
-            </a>
-            <a
-              href=''
-              className={`${classes.btn} ${classes.btn_contained}`}
-              target='_blank'
-            >
-              Live Demo
-            </a>
-          </div>
-        </article>
-        <article className={portfolio_class.portfolio_item}>
-          <div className={portfolio_class.portfolio_image}>
-            <img src='/images/ecommerce.jpg' alt='project-img' />
-          </div>
-          <Typography
-            variant='h3'
-            className={portfolio_class.portfolio_heading}
-          >
-            Ouicestnous
-          </Typography>
-          <div className={portfolio_class.portfolio_cta}>
-            <a
-              href=''
-              className={`${classes.btn} ${classes.btn_outlined}`}
-              target='_blank'
-            >
-              Github Repo
-            </a>
-            <a
-              href=''
-              className={`${classes.btn} ${classes.btn_contained}`}
-              target='_blank'
-            >
-              Live Demo
-            </a>
-          </div>
-        </article>
-        <article className={portfolio_class.portfolio_item}>
-          <div className={portfolio_class.portfolio_image}>
-            <img src='/images/ecommerce.jpg' alt='project-img' />
-          </div>
-          <Typography
-            variant='h3'
-            className={portfolio_class.portfolio_heading}
-          >
-            Ouicestnous
-          </Typography>
-          <div className={portfolio_class.portfolio_cta}>
-            <a
-              href=''
-              className={`${classes.btn} ${classes.btn_outlined}`}
-              target='_blank'
-            >
-              Github Repo
-            </a>
-            <a
-              href=''
-              className={`${classes.btn} ${classes.btn_contained}`}
-              target='_blank'
-            >
-              Live Demo
-            </a>
-          </div>
-        </article>
+        {data.map((item) => {
+          return (
+            <article className={portfolio_class.portfolio_item} key={item.id}>
+              <div className={portfolio_class.portfolio_image}>
+                <img src={item.image} alt={item.title} />
+              </div>
+              <Typography
+                variant='h3'
+                className={portfolio_class.portfolio_heading}
+              >
+                {item.title}
+              </Typography>
+              <div className={portfolio_class.portfolio_cta}>
+                <a
+                  href={item.github_repo}
+                  className={`${classes.btn} ${classes.btn_outlined}`}
+                  target='_blank'
+                >
+                  Github Repo
+                </a>
+                <a
+                  href={item.demo_link}
+                  className={`${classes.btn} ${classes.btn_contained}`}
+                  target='_blank'
+                >
+                  Live Demo
+                </a>
+              </div>
+            </article>
+          );
+        })}
       </div>
     </section>
   );

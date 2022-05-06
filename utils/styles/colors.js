@@ -1,12 +1,11 @@
 export const colors = {
   //light colors
-  background_light: '#F7F3F3',
-  background_variant_light: '#EFE6E6',
-  primary_light: '#816C61',
-  secondary_light: '#C37F6F',
+  background_light: '#EBFFFD',
+  background_variant_light: '#D6FFF9',
+  primary_light: '#03B5A9',
+  secondary_light: '#008F79',
   info_light: '#88F7FB',
   success_light: '#77BB8E',
-  light_brown: '#E7DFC6',
   text_light: '#F7F3F3',
   //dark colors
   background_dark: '#06090E',
@@ -16,6 +15,5 @@ export const colors = {
   error_dark: '#DF3B57',
   info_dark: '#F1DACA',
   success_dark: '#0B6E4F',
-  dark_brown: '#816C61',
   text_dark: '#161B33',
 };

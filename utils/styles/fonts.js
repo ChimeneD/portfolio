@@ -5,6 +5,6 @@ export const font_family = {
   paragraph: 'Nunito',
   caption: 'Raleway',
   link: 'Raleway',
-  button: 'Dosis',
+  button: 'Raleway',
   display: 'Patrick Hand SC',
 };

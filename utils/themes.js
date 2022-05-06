@@ -71,6 +71,8 @@ export const lightTheme = createTheme({
     },
     button: {
       fontFamily: button,
+      fontWeight: 'bold',
+      textTransform: 'none',
     },
   },
   palette: {
@@ -147,6 +149,8 @@ export const darkTheme = createTheme({
     },
     button: {
       fontFamily: button,
+      fontWeight: 'bold',
+      textTransform: 'none',
     },
   },
   palette: {

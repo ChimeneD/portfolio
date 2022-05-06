@@ -8,6 +8,7 @@ import Skills from '@components/pages/skills';
 import Portfolio from '@components/pages/portfolio';
 import Contact from '@components/pages/contacts';
 import Services from '@components/pages/services';
+import Footer from '@components/footer';
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <Services />
       <Portfolio />
       <Contact />
+      <Footer />
     </Layout>
   );
 };

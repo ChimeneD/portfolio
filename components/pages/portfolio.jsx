@@ -11,17 +11,17 @@ const Portfolio = () => {
   const data = [
     {
       id: 1,
-      image: '',
+      image: '/images/ouicestnous.svg',
       title: 'Ouicestnous Website',
       github_repo: '',
-      demo_link: 'ouicestnous.netlify.app',
+      demo_link: 'https://ouicestnous-ca.netlify.app/',
     },
     {
       id: 2,
-      image: '',
+      image: '/images/matchoice.svg',
       title: 'Matchoice E-Commerce Website',
       github_repo: '',
-      demo_link: 'matchoice.netlify.app',
+      demo_link: 'https://matchoice-client.netlify.app/',
     },
   ];
   return (

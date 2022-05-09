@@ -1,5 +1,6 @@
 import { makeStyles } from '@mui/styles';
 import { colors } from '../colors';
+import { font_family } from '../fonts';
 const container_width_lg = '75%';
 const container_width_md = '86%';
 const container_width_sm = '90%';
@@ -10,6 +11,9 @@ const {
   background_variant_dark,
   background_variant_light,
 } = colors;
+
+//fonts
+const { button } = font_family;
 export const main_class = makeStyles((theme) => ({
   '@global': {
     '*::-webkit-scrollbar': {
@@ -41,7 +45,9 @@ export const main_class = makeStyles((theme) => ({
     padding: '0.5rem 1rem',
     borderRadius: '0.4rem',
     cursor: 'pointer',
+    fontWeight: 'bold',
     border: `2px solid ${theme.palette.primary.main}`,
+    fontFamily: button,
     //small screen
     [theme.breakpoints.down('sm')]: {
       padding: '0.3rem 0.8rem',

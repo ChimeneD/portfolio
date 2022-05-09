@@ -1,14 +1,78 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React from 'react';
+import React, { useState } from 'react';
 import { TextField, Typography } from '@mui/material';
 import { main_class } from '@utils/styles/javascript/main';
 import { contact_classes } from '@utils/styles/javascript/contact';
 import { MdOutlineMarkEmailUnread } from 'react-icons/md';
 import { RiWhatsappLine } from 'react-icons/ri';
+import { styled } from '@mui/material/styles';
+import { Controller, useForm } from 'react-hook-form';
+import emailjs from 'emailjs-com';
+import { toast } from 'react-hot-toast';
 
 const Contacts = () => {
   const classes = main_class();
   const contact_class = contact_classes();
+
+  const [fetchLoading, setFetchLoading] = useState(false);
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+    setValue,
+  } = useForm();
+  const StyledTextField = styled(TextField)(({ theme }) => ({
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        border: `2px solid ${theme.palette.secondary.main}`,
+        borderRadius: '0.8rem',
+      },
+    },
+  }));
+
+  const sendMessage = async ({ email, name, subject, message }) => {
+    try {
+      setFetchLoading(true);
+      const templateParams = {
+        from_name: name,
+        to_name: 'Daniel Amadi',
+        subject: subject,
+        reply_to: email,
+        message: message,
+      };
+      await emailjs
+        .send(
+          process.env.SERVICE_ID,
+          process.env.TEMPLATE_ID,
+          templateParams,
+          process.env.USER_ID
+        )
+        .then(
+          (response) => {
+            if (response.status === 200) {
+              setFetchLoading(false);
+              setValue('email', '');
+              setValue('name', '');
+              setValue('subject', '');
+              setValue('message', '');
+              toast.success(`SUCCESS... Message Sent!!!`);
+            }
+          },
+          (err) => {
+            setFetchLoading(false);
+            toast.error(`FAILED... ${err.message}`);
+          }
+        );
+    } catch (err) {
+      setFetchLoading(false);
+      toast.error(
+        err.response && err.response.data && err.response.data.message
+          ? err.response.data.message
+          : err.message
+      );
+    }
+  };
+
   return (
     <section id='contact'>
       <Typography variant='h5'>How can you reach me?</Typography>
@@ -43,30 +107,101 @@ const Contacts = () => {
             </a>
           </article>
         </div>
-        <form>
-          <TextField
-            placeholder='Full Name'
-            label='Full Name'
-            variant='outlined'
-            fullWidth
+        <form onSubmit={handleSubmit(sendMessage)}>
+          <Controller
+            name='email'
+            control={control}
+            defaultValue=''
+            rules={{
+              required: true,
+              pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
+            }}
+            render={({ field }) => (
+              <StyledTextField
+                variant='outlined'
+                id='email'
+                label='Email Address'
+                type='email'
+                fullWidth
+                error={Boolean(errors.email)}
+                helperText={
+                  errors.email
+                    ? errors.email.type === 'pattern'
+                      ? 'Email is not valid'
+                      : 'Email is required'
+                    : ''
+                }
+                {...field}
+              />
+            )}
           />
-          <TextField
-            placeholder='Email Address'
-            label='Email Address'
-            fullWidth
+          <Controller
+            name='name'
+            control={control}
+            defaultValue=''
+            rules={{
+              required: true,
+            }}
+            render={({ field }) => (
+              <StyledTextField
+                variant='outlined'
+                id='name'
+                label='Full Name'
+                type='text'
+                fullWidth
+                error={Boolean(errors.name)}
+                helperText={errors.name ? 'Full name is required' : ''}
+                {...field}
+              />
+            )}
           />
-          <TextField placeholder='Subject' label='Email Subject' fullWidth />
-          <TextField
-            placeholder='Message'
-            multiline
-            minRows={4}
-            label='Email Message'
-            fullWidth
+          <Controller
+            name='subject'
+            control={control}
+            defaultValue=''
+            rules={{
+              required: true,
+            }}
+            render={({ field }) => (
+              <StyledTextField
+                variant='outlined'
+                id='subject'
+                label='Subject'
+                type='text'
+                fullWidth
+                error={Boolean(errors.name)}
+                helperText={errors.name ? 'Subject is required' : ''}
+                {...field}
+              />
+            )}
+          />
+          <Controller
+            name='message'
+            control={control}
+            defaultValue=''
+            rules={{
+              required: true,
+            }}
+            render={({ field }) => (
+              <StyledTextField
+                variant='outlined'
+                id='message'
+                label='Message'
+                type='text'
+                multiline
+                minRows={5}
+                fullWidth
+                error={Boolean(errors.name)}
+                helperText={errors.name ? 'Message is required' : ''}
+                {...field}
+              />
+            )}
           />
           <button
             type='submit'
             variant='contained'
             className={`${classes.btn} ${classes.btn_contained}`}
+            disabled={fetchLoading}
           >
             Send Message
           </button>

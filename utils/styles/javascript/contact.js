@@ -2,6 +2,8 @@ import { makeStyles } from '@mui/styles';
 import { colors } from '../colors';
 
 const { background_variant_dark, background_variant_light } = colors;
+
+const container_width_sm = '90%';
 export const contact_classes = makeStyles((theme) => ({
   '@global': {
     form: {
@@ -14,6 +16,16 @@ export const contact_classes = makeStyles((theme) => ({
     display: 'grid',
     gridTemplateColumns: '30% 58%',
     gap: '12%',
+    //medium screen
+    [theme.breakpoints.down('md')]: {
+      gridTemplateColumns: '1fr',
+      gap: '2rem',
+      width: '70%',
+    },
+    //small screen
+    [theme.breakpoints.down('sm')]: {
+      width: container_width_sm,
+    },
   },
   contact_options: {
     display: 'flex',

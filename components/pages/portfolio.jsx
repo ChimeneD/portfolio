@@ -13,14 +13,14 @@ const Portfolio = () => {
       id: 1,
       image: '/images/ouicestnous.svg',
       title: 'Ouicestnous Website',
-      github_repo: '',
+      github_repo: 'https://github.com/ChimeneD/ouicestnous-next',
       demo_link: 'https://ouicestnous-ca.netlify.app/',
     },
     {
       id: 2,
       image: '/images/matchoice.svg',
       title: 'Matchoice E-Commerce Website',
-      github_repo: '',
+      github_repo: 'https://github.com/ChimeneD/matchoice-nextjs',
       demo_link: 'https://matchoice-client.netlify.app/',
     },
   ];

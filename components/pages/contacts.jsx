@@ -48,14 +48,20 @@ const Contacts = () => {
             placeholder='Full Name'
             label='Full Name'
             variant='outlined'
+            fullWidth
           />
-          <TextField placeholder='Email Address' label='Email Address' />
-          <TextField placeholder='Subject' label='Email Subject' />
+          <TextField
+            placeholder='Email Address'
+            label='Email Address'
+            fullWidth
+          />
+          <TextField placeholder='Subject' label='Email Subject' fullWidth />
           <TextField
             placeholder='Message'
             multiline
             minRows={4}
             label='Email Message'
+            fullWidth
           />
           <button
             type='submit'

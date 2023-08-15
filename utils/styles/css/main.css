@@ -1,5 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&family=Patrick+Hand+SC&family=Poppins:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&family=Patrick+Hand+SC&family=Poppins:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap");
 
+::-webkit-scrollbar {
+  width: 0.4em;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+}
+:root {
+  /* container width */
+  --container-width-lg: 75%;
+  --container-width-md: 85%;
+  --container-width-sm: 90%;
+  --transition-delay: 0.8s;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -7,7 +23,7 @@ html {
 body {
   font-family: "Poppins";
   line-height: 1.7;
- /*background-image: url(../);*/ 
+  /*background-image: url(../);*/
 }
 
 * {
@@ -24,7 +40,8 @@ section {
   margin-top: 8rem;
 }
 
-section > h2, section > h5 {
+section > h2,
+section > h5 {
   text-align: center;
 }
 
@@ -43,14 +60,47 @@ img {
   object-fit: cover;
 }
 
+/* light */
+@media (prefers-color-scheme: light) {
+  /* general colors */
+  :root {
+    --primary-color: #03b5a9;
+    --secondary-color: #008f79;
+    --bg-color: #ebfffd;
+    --bg-variant-color: #d6fff9;
+  }
+}
+[color-scheme="light"] {
+  --primary-color: #03b5a9;
+  --secondary-color: #008f79;
+  --bg-color: #ebfffd;
+  --bg-variant-color: #d6fff9;
+}
+/* dark */
+@media (prefers-color-scheme: dark) {
+  /* general colors */
+  :root {
+    --primary-color: #02f2e2;
+    --secondary-color: #9afef2;
+    --bg-color: #06090e;
+    --bg-variant-color: #30323d;
+  }
+}
+[color-scheme="dark"] {
+  --primary-color: #02f2e2;
+  --secondary-color: #9afef2;
+  --bg-color: #06090e;
+  --bg-variant-color: #30323d;
+}
+
 @media screen and (max-width: 1024px) {
-  section{
+  section {
     margin-top: 6rem;
   }
 }
 
 @media screen and (max-width: 600px) {
-  section > h2{
+  section > h2 {
     margin-bottom: 2rem;
   }
 }

@@ -1,44 +1,44 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import React from 'react';
-import { Typography } from '@mui/material';
-import { main_class } from '@utils/styles/javascript/main';
-import { about_classes } from '@utils/styles/javascript/about';
-import { BsAwardFill } from 'react-icons/bs';
-import { BiPaint } from 'react-icons/bi';
-import { FaRegFolderOpen } from 'react-icons/fa';
+import React from "react";
+import { Typography } from "@mui/material";
+import { main_class } from "@utils/styles/javascript/main";
+import { about_classes } from "@utils/styles/javascript/about";
+import { BsAwardFill } from "react-icons/bs";
+import { BiPaint } from "react-icons/bi";
+import { FaRegFolderOpen } from "react-icons/fa";
 
-const img_url = '/images/daniel.JPG';
+const img_url = "/images/daniel.JPG";
 const About = () => {
   const classes = main_class();
   const about_class = about_classes();
   return (
-    <section id='about'>
-      <Typography variant='h5'>What about me?</Typography>
-      <Typography variant='h2' style={{ marginBottom: '4rem' }}>
+    <section id="about">
+      <Typography variant="h5">What about me?</Typography>
+      <Typography variant="h2" style={{ marginBottom: "4rem" }}>
         About Me
       </Typography>
-      <div className={`${classes.container} ${about_class.about_container}`}>
-        <div className={about_class.about_me}>
-          <div className={about_class.about_me_image}>
-            <img src={img_url} alt='me' />
+      <div className="container about-container">
+        <div className="about-me">
+          <div className="about-me-image">
+            <img src={img_url} alt="me" />
           </div>
         </div>
         <div className={about_class.about_content}>
           <div className={about_class.about_cards}>
             <article className={about_class.about_card}>
               <BsAwardFill className={about_class.about_icon} />
-              <Typography variant='h5'>Experience</Typography>
+              <Typography variant="h5">Experience</Typography>
               <small>+3 years coding</small>
             </article>
             <article className={about_class.about_card}>
               <FaRegFolderOpen className={about_class.about_icon} />
-              <Typography variant='h5'>Projects</Typography>
+              <Typography variant="h5">Projects</Typography>
               <small>+2 projects done</small>
             </article>
             <article className={about_class.about_card}>
               <BiPaint className={about_class.about_icon} />
-              <Typography variant='h5'>Skills</Typography>
+              <Typography variant="h5">Skills</Typography>
               <small>Always evolving</small>
             </article>
           </div>
@@ -52,7 +52,7 @@ const About = () => {
           </p>
           <a
             className={`${classes.btn} ${classes.btn_contained}`}
-            href='#contact'
+            href="#contact"
           >
             Let's Talk
           </a>

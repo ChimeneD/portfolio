@@ -1,5 +1,4 @@
 import { Context } from '@utils/appContext';
-import '@utils/styles/css/main.css';
 import Cookies from 'js-cookie';
 import React, { useReducer, useState } from 'react';
 import { SnackbarProvider } from 'notistack';
@@ -9,6 +8,10 @@ import { Toaster } from 'react-hot-toast';
 
 const clientSideEmotionCache = createEmotionCache();
 
+// css
+import '@utils/styles/css/main.css';
+import '@utils/styles/css/home.css';
+import '@utils/styles/css/about.css';
 function MyApp(props) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   const initialState = {

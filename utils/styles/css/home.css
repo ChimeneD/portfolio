@@ -1,0 +1,74 @@
+.container {
+  width: var(--container-width-lg);
+  margin: 0 auto;
+}
+.header-container {
+  text-align: center;
+  height: 100%;
+  position: relative;
+}
+.container > .cta {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+.btn {
+  width: max-content;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-weight: bold;
+  border: 2px solid var(--primary-color);
+  font-family: "Poppins";
+}
+.btn-contained {
+  color: var(--text-color);
+  background: var(--primary-color);
+  transition: all 500ms ease;
+}
+.btn-contained:hover {
+  background: var(--bg-variant-color);
+  color: var(--primary-color);
+}
+.btn-outlined {
+  color: var(--primary-color);
+  background: transparent;
+  transition: all 500ms ease;
+}
+.btn-outlined:hover {
+  background: var(--bg-variant-color);
+  border-color: transparent;
+  color: var(--primary-color);
+}
+.container > .me {
+  position: relative;
+  height: 100%;
+  width: auto;
+}
+.container > .me > article {
+  height: 350px;
+  /* background-color: var(--primary-color); */
+  width: 350px;
+  margin: 2rem auto;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.container > .me > article > img {
+  height: 120%;
+  width: auto;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+/* medium screens */
+@media screen and (max-width: 1024px) {
+}
+
+/* small screens */
+@media screen and (max-width: 600px) {
+}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { GoHome } from "react-icons/go";
-// import { VscFolderLibrary } from "react-icons/vsc";
+import { VscFolderLibrary } from "react-icons/vsc";
 import { RiMessage2Line, RiUserLine } from "react-icons/ri";
 import { IoBrushOutline } from "react-icons/io5";
 
@@ -32,13 +32,13 @@ const FloatingNav = () => {
       >
         <IoBrushOutline />
       </a>
-      {/* <a
+      <a
         href='#portfolio'
         className={`${activeLink === '#portfolio' ? nav_class.active : ''}`}
         onClick={() => setActiveLink('#portfolio')}
       >
         <VscFolderLibrary />
-      </a> */}
+      </a>
       <a
         href="#contact"
         className={`${activeLink === "#contact" ? nav_class.active : ""}`}

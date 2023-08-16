@@ -68,6 +68,7 @@ img {
     --secondary-color: #008f79;
     --bg-color: #ebfffd;
     --bg-variant-color: #d6fff9;
+    --text-color: #f7f3f3;
   }
 }
 [color-scheme="light"] {
@@ -84,6 +85,7 @@ img {
     --secondary-color: #9afef2;
     --bg-color: #06090e;
     --bg-variant-color: #30323d;
+    --text-color: #161b33;
   }
 }
 [color-scheme="dark"] {

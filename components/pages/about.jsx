@@ -2,7 +2,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Typography } from "@mui/material";
-import { main_class } from "@utils/styles/javascript/main";
 import { about_classes } from "@utils/styles/javascript/about";
 import { BsAwardFill } from "react-icons/bs";
 import { BiPaint } from "react-icons/bi";
@@ -10,7 +9,6 @@ import { FaRegFolderOpen } from "react-icons/fa";
 
 const img_url = "/images/daniel.JPG";
 const About = () => {
-  const classes = main_class();
   const about_class = about_classes();
   return (
     <section id="about">
@@ -34,7 +32,7 @@ const About = () => {
             <article className={about_class.about_card}>
               <FaRegFolderOpen className={about_class.about_icon} />
               <Typography variant="h5">Projects</Typography>
-              <small>+2 projects done</small>
+              <small>+2 projects pending</small>
             </article>
             <article className={about_class.about_card}>
               <BiPaint className={about_class.about_icon} />
@@ -45,15 +43,12 @@ const About = () => {
           <p>
             {` <!-- Hello World! --> `}I'm Daniel Chimene Amadi, a self thought
             fullstack web developer with quite a bit of Experience. I'm a
-            computer engineering graduate (Diploma) from the Cape Peninsula
-            University of Technology and I like to draw, design and build sweet
-            responsive websites (like this one) and I look forward to hearing
-            from you about exciting new projects.
+            computer engineering graduate (Diploma and Bachelors) from the Cape
+            Peninsula University of Technology and I like to draw, design and
+            build sweet, beautiful responsive websites (like this one) and I
+            look forward to hearing from you about exciting new projects.
           </p>
-          <a
-            className={`${classes.btn} ${classes.btn_contained}`}
-            href="#contact"
-          >
+          <a className="btn btn-outlined" href="#contact">
             Let's Talk
           </a>
         </div>

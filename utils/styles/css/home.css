@@ -61,7 +61,6 @@
 .container > .me > article > img {
   height: 120%;
   width: auto;
-  z-index: 10;
   border-radius: 50%;
 }
 

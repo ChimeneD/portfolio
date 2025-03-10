@@ -12,18 +12,25 @@ const Portfolio = () => {
     {
       id: 1,
       image: "/images/ouicestnous.svg",
-      title: "Ouicestnous Website",
-      github_repo: "https://github.com/ChimeneD/ouicestnous-next",
-      stack: "NextJS, React, GraphQL, NodeJS and MongoDB",
-      demo_link: "https://ouicestnous-ca.netlify.app/",
+      title: "Knus Wonen Website",
+      github_repo: "https://github.com/ChimeneD/knus-wonen",
+      stack: "NextJS",
+      demo_link: "https://knus-wonen.vercel.app/",
     },
-    // {
-    //   id: 2,
-    //   image: '/images/matchoice.svg',
-    //   title: 'Matchoice E-Commerce Website',
-    //   github_repo: 'https://github.com/ChimeneD/matchoice-nextjs',
-    //   demo_link: 'https://matchoice-client.netlify.app/',
-    // },
+    {
+      id: 2,
+      image: "/images/ouicestnous.svg",
+      title: "DoForGood Website",
+      github_repo: "https://github.com/ChimeneD/foundation",
+      demo_link: "https://doforgood.netlify.app/",
+    },
+    {
+      id: 3,
+      image: "/images/ouicestnous.svg",
+      title: "Portfolio",
+      github_repo: "https://github.com/ChimeneD/portfolio",
+      demo_link: "https://chimene.dev/",
+    },
   ];
   return (
     <section id="portfolio">

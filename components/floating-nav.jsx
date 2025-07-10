@@ -47,12 +47,13 @@ const FloatingNav = () => {
       >
         <RiMessage2Line />
       </a>
-      <Link
-        to="/policies"
-        className={`${activeLink === "/policies" ? nav_class.active : ""}`}
-        onClick={() => setActiveLink("/policies")}
-      >
-        <HiOutlineDocumentText />
+      <Link passHref href="/policies">
+        <a
+          className={`${activeLink === "/policies" ? nav_class.active : ""}`}
+          onClick={() => setActiveLink("/policies")}
+        >
+          <HiOutlineDocumentText />
+        </a>
       </Link>
     </nav>
   );

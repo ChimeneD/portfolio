@@ -3,8 +3,8 @@ import { GoHome } from "react-icons/go";
 import { VscFolderLibrary } from "react-icons/vsc";
 import { RiMessage2Line, RiUserLine } from "react-icons/ri";
 import { IoBrushOutline } from "react-icons/io5";
-
 import { nav_classes } from "@utils/styles/javascript/floating-nav";
+import { HiOutlineDocumentText } from "react-icons/hi";
 
 const FloatingNav = () => {
   const [activeLink, setActiveLink] = useState("#");
@@ -12,39 +12,46 @@ const FloatingNav = () => {
   return (
     <nav className={nav_class.nav_container}>
       <a
-        href="#"
+        href={`/#`}
         className={`${activeLink === "#" ? nav_class.active : ""}`}
         onClick={() => setActiveLink("#")}
       >
         <GoHome />
       </a>
       <a
-        href="#about"
+        href={`/#about`}
         className={`${activeLink === "#about" ? nav_class.active : ""}`}
         onClick={() => setActiveLink("#about")}
       >
         <RiUserLine />
       </a>
       <a
-        href="#skills"
+        href={`/#skills`}
         className={`${activeLink === "#skills" ? nav_class.active : ""}`}
         onClick={() => setActiveLink("#skills")}
       >
         <IoBrushOutline />
       </a>
       <a
-        href='#portfolio'
-        className={`${activeLink === '#portfolio' ? nav_class.active : ''}`}
-        onClick={() => setActiveLink('#portfolio')}
+        href={"/#portfolio"}
+        className={`${activeLink === "#portfolio" ? nav_class.active : ""}`}
+        onClick={() => setActiveLink("#portfolio")}
       >
         <VscFolderLibrary />
       </a>
       <a
-        href="#contact"
+        href={"/#contact"}
         className={`${activeLink === "#contact" ? nav_class.active : ""}`}
         onClick={() => setActiveLink("#contact")}
       >
         <RiMessage2Line />
+      </a>
+      <a
+        href="/policies"
+        className={`${activeLink === "/policies" ? nav_class.active : ""}`}
+        onClick={() => setActiveLink("/policies")}
+      >
+        <HiOutlineDocumentText />
       </a>
     </nav>
   );

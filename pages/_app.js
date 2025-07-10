@@ -12,6 +12,7 @@ const clientSideEmotionCache = createEmotionCache();
 import '@utils/styles/css/main.css';
 import '@utils/styles/css/home.css';
 import '@utils/styles/css/about.css';
+import '@utils/styles/css/terms.css';
 import { storeReducer } from '@utils/context-reducer';
 function MyApp(props) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;

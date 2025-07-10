@@ -88,9 +88,9 @@ const Contacts = () => {
           <article className={contact_class.contact_option}>
             <MdOutlineMarkEmailUnread className={contact_class.contact_icon} />
             <Typography variant="h4">Email</Typography>
-            <Typography variant="h5">chimenejnr@gmail.com</Typography>
+            <Typography variant="h5">hello@chimene.dev</Typography>
             <a
-              href="mailto:chimenejnr@gmail.com"
+              href="mailto:hello@chimene.dev"
               className={`${classes.btn} ${classes.btn_contained}`}
             >
               Send a message

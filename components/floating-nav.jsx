@@ -5,6 +5,7 @@ import { RiMessage2Line, RiUserLine } from "react-icons/ri";
 import { IoBrushOutline } from "react-icons/io5";
 import { nav_classes } from "@utils/styles/javascript/floating-nav";
 import { HiOutlineDocumentText } from "react-icons/hi";
+import Link from "next/link";
 
 const FloatingNav = () => {
   const [activeLink, setActiveLink] = useState("#");
@@ -46,13 +47,13 @@ const FloatingNav = () => {
       >
         <RiMessage2Line />
       </a>
-      <a
-        href="/policies"
+      <Link
+        to="/policies"
         className={`${activeLink === "/policies" ? nav_class.active : ""}`}
         onClick={() => setActiveLink("/policies")}
       >
         <HiOutlineDocumentText />
-      </a>
+      </Link>
     </nav>
   );
 };

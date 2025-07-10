@@ -52,6 +52,9 @@
     padding: 4rem 2rem;
     justify-content: start;
   }
+  .terms-container > ul {
+    width: 95%;
+  }
   .terms-container > h1 {
     font-size: 1.5rem;
   }

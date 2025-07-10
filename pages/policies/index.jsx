@@ -12,8 +12,8 @@ const TermsPage = () => {
         </h5>
         <ul>
           <li>
-            <h4>Refund Eligibility:</h4>
-            <h5>Refunds may be issued under these circumstances:</h5>
+            <h5>Refund Eligibility:</h5>
+            <h6>Refunds may be issued under these circumstances:</h6>
             <ul>
               <li>You cancel a project before any work has commenced.</li>
               <li>
@@ -65,16 +65,13 @@ const TermsPage = () => {
             </ul>
           </li>
           <li>
+            <h5>Project Cancellation by Developer:</h5>
             <p>
               Cancellation by Developer In rare cases, I reserve the right to
               cancel a project due to unforeseen circumstances (e.g. illness,
-              technical barriers).
-            </p>
-
-            <p>
-              In such cases: A full or partial refund will be provided depending
-              on the work completed. All completed work up to that point will be
-              handed over.
+              technical barriers). In such cases: A full or partial refund will
+              be provided depending on the work completed. All completed work up
+              to that point will be handed over.
             </p>
           </li>
         </ul>

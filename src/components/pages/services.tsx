@@ -1,77 +1,60 @@
 import React from "react";
-import { Typography } from "@/components/typography";
-import { main_class } from "../../utils/styles/javascript/main";
-import { service_classes } from "../../utils/styles/javascript/services";
-
 import { GiCheckMark } from "react-icons/gi";
 
 const services = [
   {
-    title: "Product Interfaces",
+    title: "Creative Direction",
     items: [
-      "Design-aware React and Next.js builds",
-      "Responsive layouts tuned for real workflows",
-      "Motion, accessibility, and visual polish",
-      "Component systems that can grow",
+      "Brand-aligned digital concepts",
+      "Narrative-first campaign structure",
+      "Visual direction for web rollouts",
+      "Design critique and refinement",
     ],
   },
   {
-    title: "Fullstack Delivery",
+    title: "Product Engineering",
     items: [
-      "API design and backend integration",
-      "Forms, validation, auth-aware flows",
-      "Data modeling for practical product needs",
-      "Deployment-ready project structure",
+      "Next.js and React architecture",
+      "API integration and backend flows",
+      "Form, auth, and dashboard systems",
+      "Performance and accessibility tuning",
     ],
   },
   {
-    title: "Creative Systems",
+    title: "Growth Websites",
     items: [
-      "Brand-forward portfolio and campaign sites",
-      "Interactive storytelling and landing pages",
-      "Performance passes for smoother UX",
-      "Sharp handoff and maintainable docs",
+      "Conversion-focused landing pages",
+      "SEO-conscious content structures",
+      "Analytics-ready implementation",
+      "Launch support and post-launch iteration",
     ],
   },
 ];
 
 const Services = () => {
-  const classes = main_class();
-  const service_class = service_classes();
-
   return (
-    <section id="services" className="py-28 max-lg:py-20">
-      <div className={`${classes.container} mb-14`} data-reveal="text">
-        <Typography className="text-center" variant="h5">
-          Services
-        </Typography>
-        <Typography className="mx-auto mt-4 max-w-3xl text-center" variant="h2">
-          From elegant UI to dependable application architecture.
-        </Typography>
-      </div>
-      <div
-        className={`${classes.container} ${service_class.service_container}`}
-        data-reveal="stagger-group"
-      >
-        {services.map((service) => (
-          <article
-            className={service_class.services}
-            key={service.title}
-            data-stagger-item
-          >
-            <div className={`${service_class.service_header}`}>
-              <Typography variant="h3">{service.title}</Typography>
-            </div>
-            <ul className={`${service_class.service_list}`}>
-              {service.items.map((item) => (
-                <li key={item}>
-                  <GiCheckMark className={service_class.service_list_icon} />
-                  <p>{item}</p>
-                </li>
-              ))}
-            </ul>
-          </article>
-        ))}
+    <section id="services" className="site-section">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl" data-reveal="text">
+          <span className="section-kicker">Services</span>
+          <h2 className="section-title mt-5">From concept room to shipped product.</h2>
+        </div>
+
+        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3" data-reveal="stagger-group">
+          {services.map((service) => (
+            <article className="section-shell p-6" key={service.title} data-stagger-item>
+              <h3 className="text-2xl leading-tight">{service.title}</h3>
+              <ul className="mt-6 space-y-4">
+                {service.items.map((item) => (
+                  <li className="flex items-start gap-3" key={item}>
+                    <GiCheckMark className="mt-1 shrink-0 text-xs text-primary" />
+                    <p className="text-sm text-text-alt">{item}</p>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

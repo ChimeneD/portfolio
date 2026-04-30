@@ -1,7 +1,4 @@
 import { TextField } from "@/components/text-field";
-import { Typography } from "@/components/typography";
-import { main_class } from "../../utils/styles/javascript/main";
-import { contact_classes } from "../../utils/styles/javascript/contact";
 import { MdOutlineMarkEmailUnread } from "react-icons/md";
 import { RiWhatsappLine } from "react-icons/ri";
 import emailjs from "@emailjs/browser";
@@ -43,8 +40,6 @@ const contactValidationSchema = Yup.object({
 });
 
 const Contacts = () => {
-  const classes = main_class();
-  const contact_class = contact_classes();
   const formik = useFormik<ContactFormValues>({
     initialValues,
     validationSchema: contactValidationSchema,
@@ -92,103 +87,117 @@ const Contacts = () => {
   });
 
   return (
-    <section id="contact" className="py-28 pb-36 max-lg:py-20">
-      <div className={`${classes.container} mb-14`} data-reveal="text">
-        <Typography className="text-center" variant="h5">
-          Contact
-        </Typography>
-        <Typography className="mx-auto mt-4 max-w-3xl text-center" variant="h2">
-          Have a sharp idea, tricky product, or polished web build in mind?
-        </Typography>
-      </div>
-      <div
-        className={`${classes.container} ${contact_class.contact_container}`}
-      >
-        <div className={contact_class.contact_options} data-reveal="stagger-group">
-          <article className={contact_class.contact_option} data-stagger-item>
-            <MdOutlineMarkEmailUnread className={contact_class.contact_icon} />
-            <Typography variant="h4">Email</Typography>
-            <Typography variant="body2">hello@chimene.dev</Typography>
-            <a
-              href="mailto:hello@chimene.dev"
-              className={`${classes.btn} ${classes.btn_contained}`}
-            >
-              Send a message
-            </a>
-          </article>
-          <article className={contact_class.contact_option} data-stagger-item>
-            <RiWhatsappLine className={contact_class.contact_icon} />
-            <Typography variant="h4">Whatsapp</Typography>
-            <Typography variant="body2">+27783355292</Typography>
-            <a
-              href="https://wa.me/+27783355292"
-              className={`${classes.btn} ${classes.btn_contained}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Send a message
-            </a>
-          </article>
+    <section id="contact" className="site-section pb-32">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl" data-reveal="text">
+          <span className="section-kicker">Get In Touch</span>
+          <h2 className="section-title mt-5">
+            Let us build something unmistakable.
+          </h2>
+          <p className="mt-5 text-base text-text-alt sm:text-lg">
+            Bring the brief, the challenge, or just the first spark. We will map
+            the right path quickly.
+          </p>
         </div>
-        <form onSubmit={formik.handleSubmit} data-reveal="image">
-          <TextField
-            name="email"
-            id="email"
-            label="Email Address"
-            type="email"
-            fullWidth
-            value={formik.values.email}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            error={Boolean(formik.touched.email && formik.errors.email)}
-            helperText={formik.touched.email ? formik.errors.email : ""}
-          />
-          <TextField
-            name="name"
-            id="name"
-            label="Full Name"
-            type="text"
-            fullWidth
-            value={formik.values.name}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            error={Boolean(formik.touched.name && formik.errors.name)}
-            helperText={formik.touched.name ? formik.errors.name : ""}
-          />
-          <TextField
-            name="subject"
-            id="subject"
-            label="Subject"
-            type="text"
-            fullWidth
-            value={formik.values.subject}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            error={Boolean(formik.touched.subject && formik.errors.subject)}
-            helperText={formik.touched.subject ? formik.errors.subject : ""}
-          />
-          <TextField
-            name="message"
-            id="message"
-            label="Message"
-            type="text"
-            multiline
-            minRows={5}
-            fullWidth
-            value={formik.values.message}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            error={Boolean(formik.touched.message && formik.errors.message)}
-            helperText={formik.touched.message ? formik.errors.message : ""}
-          />
-          <button
-            type="submit"
-            className={`${classes.btn} ${classes.btn_contained}`}
-            disabled={formik.isSubmitting}
+
+        <div className="mt-12 grid gap-6 lg:grid-cols-[0.46fr_0.54fr]">
+          <div className="space-y-4" data-reveal="stagger-group">
+            <article
+              className="section-shell p-5"
+              data-stagger-item
+            >
+              <MdOutlineMarkEmailUnread className="text-2xl text-primary" />
+              <h3 className="mt-3 text-2xl">Email</h3>
+              <p className="mt-2 text-sm text-text-alt">hello@chimene.dev</p>
+              <a
+                href="mailto:hello@chimene.dev"
+                className="mt-4 inline-flex border border-primary bg-primary px-4 py-2 text-xs font-semibold uppercase tracking-widest text-primary-foreground transition-colors hover:bg-transparent hover:text-primary"
+              >
+                Send a message
+              </a>
+            </article>
+            <article
+              className="section-shell p-5"
+              data-stagger-item
+            >
+              <RiWhatsappLine className="text-2xl text-primary" />
+              <h3 className="mt-3 text-2xl">WhatsApp</h3>
+              <p className="mt-2 text-sm text-text-alt">+27 78 335 5292</p>
+              <a
+                href="https://wa.me/+27783355292"
+                className="mt-4 inline-flex border border-border bg-card/75 px-4 py-2 text-xs font-semibold uppercase tracking-widest transition-colors hover:border-primary hover:text-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open chat
+              </a>
+            </article>
+          </div>
+
+          <form
+            className="section-shell space-y-4 p-5"
+            onSubmit={formik.handleSubmit}
+            data-reveal="image"
           >
-            {formik.isSubmitting ? "Sending..." : "Send Message"}
-          </button>
-        </form>
+            <TextField
+              name="email"
+              id="email"
+              label="Email Address"
+              type="email"
+              fullWidth
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={Boolean(formik.touched.email && formik.errors.email)}
+              helperText={formik.touched.email ? formik.errors.email : ""}
+            />
+            <TextField
+              name="name"
+              id="name"
+              label="Full Name"
+              type="text"
+              fullWidth
+              value={formik.values.name}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={Boolean(formik.touched.name && formik.errors.name)}
+              helperText={formik.touched.name ? formik.errors.name : ""}
+            />
+            <TextField
+              name="subject"
+              id="subject"
+              label="Subject"
+              type="text"
+              fullWidth
+              value={formik.values.subject}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={Boolean(formik.touched.subject && formik.errors.subject)}
+              helperText={formik.touched.subject ? formik.errors.subject : ""}
+            />
+            <TextField
+              name="message"
+              id="message"
+              label="Message"
+              type="text"
+              multiline
+              minRows={6}
+              fullWidth
+              value={formik.values.message}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={Boolean(formik.touched.message && formik.errors.message)}
+              helperText={formik.touched.message ? formik.errors.message : ""}
+            />
+            <button
+              type="submit"
+              className="inline-flex items-center border border-primary bg-primary px-5 py-3 text-xs font-semibold uppercase tracking-widest text-primary-foreground transition-colors hover:bg-transparent hover:text-primary disabled:cursor-not-allowed disabled:opacity-70"
+              disabled={formik.isSubmitting}
+            >
+              {formik.isSubmitting ? "Sending..." : "Send Message"}
+            </button>
+          </form>
+        </div>
       </div>
     </section>
   );

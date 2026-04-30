@@ -1,85 +1,92 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { Typography } from "@/components/typography";
-import { about_classes } from "../../utils/styles/javascript/about";
-import { main_class } from "../../utils/styles/javascript/main";
 import { BsAwardFill } from "react-icons/bs";
 import { BiPaint } from "react-icons/bi";
 import { FaRegFolderOpen } from "react-icons/fa";
 
-const img_url = "/images/daniel.JPG";
-
 const highlights = [
   {
     icon: BsAwardFill,
-    title: "Experience",
-    detail: "3+ years building",
+    title: "Execution",
+    detail: "Strategy translated into working outcomes.",
   },
   {
     icon: FaRegFolderOpen,
-    title: "Projects",
-    detail: "Product work and experiments",
+    title: "Range",
+    detail: "From landing pages to full product ecosystems.",
   },
   {
     icon: BiPaint,
     title: "Taste",
-    detail: "Interfaces with polish",
+    detail: "Visual systems that feel premium and intentional.",
   },
 ];
 
 const About = () => {
-  const classes = main_class();
-  const about_class = about_classes();
-
   return (
-    <section id="about" className="py-28 max-lg:py-20">
-      <div className={`${classes.container} mb-14`} data-reveal="text">
-        <Typography className="text-center" variant="h5">
-          About
-        </Typography>
-        <Typography className="mx-auto mt-4 max-w-3xl text-center" variant="h2">
-          Quietly technical, deeply visual, always tuned to the user.
-        </Typography>
-      </div>
-      <div className={`${classes.container} ${about_class.about_container}`}>
-        <div className={about_class.about_me} data-reveal="image">
-          <div className={about_class.about_me_image}>
-            <img src={img_url} alt="Daniel C. Amadi" />
-          </div>
-        </div>
-        <div className={about_class.about_content} data-reveal="stagger-group">
-          <div className={about_class.about_cards}>
-            {highlights.map((item) => {
-              const Icon = item.icon;
-
-              return (
-                <article
-                  className={about_class.about_card}
-                  key={item.title}
-                  data-stagger-item
-                >
-                  <Icon className={about_class.about_icon} />
-                  <Typography variant="h5">{item.title}</Typography>
-                  <small>{item.detail}</small>
-                </article>
-              );
-            })}
-          </div>
-          <p data-stagger-item>
-            I'm Daniel Chimene Amadi, a self-taught fullstack developer with a
-            computer engineering background from the Cape Peninsula University
-            of Technology. I like building responsive systems that feel calm,
-            sharp, and intentional, from the API contract all the way to the
-            micro-interactions on the page.
+    <section id="about" className="site-section">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl" data-reveal="text">
+          <span className="section-kicker">About</span>
+          <h2 className="section-title mt-5">
+            A technical mind with an art director's instinct.
+          </h2>
+          <p className="mt-5 text-base text-text-alt sm:text-lg">
+            I pair engineering discipline with brand sensitivity, helping ideas
+            move from concept to production without losing creative edge.
           </p>
-          <a
-            className={`${classes.btn} ${classes.btn_outlined}`}
-            href="#contact"
-            data-stagger-item
+        </div>
+
+        <div className="mt-12 grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+          <article
+            className="section-shell overflow-hidden p-2"
+            data-reveal="image"
           >
-            Let's Talk
-          </a>
+            <img
+              src="/images/me.png"
+              alt="Daniel Amadi portrait"
+              className="h-full min-h-104 w-full object-cover"
+            />
+          </article>
+
+          <div className="space-y-5" data-reveal="stagger-group">
+            <article className="section-shell p-6" data-stagger-item>
+              <p className="text-sm text-text-alt">
+                With a Computer Engineering foundation from the Cape Peninsula
+                University of Technology, I focus on scalable frontends, calm
+                interaction design, and backend structure that stays reliable as
+                complexity grows.
+              </p>
+            </article>
+
+            <div className="grid gap-4 sm:grid-cols-3" data-stagger-item>
+              {highlights.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <article className="section-shell p-4" key={item.title}>
+                    <Icon className="text-xl text-primary" />
+                    <h3 className="mt-3 text-lg font-semibold leading-tight">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-text-alt">{item.detail}</p>
+                  </article>
+                );
+              })}
+            </div>
+
+            <article className="section-shell p-6" data-stagger-item>
+              <p className="text-sm uppercase tracking-[0.13em] text-primary">
+                Working style
+              </p>
+              <p className="mt-3 text-sm text-text-alt">
+                Discovery first, then rapid build cycles, then refinement. The
+                goal is always to make the final product feel both beautiful and
+                inevitable.
+              </p>
+            </article>
+          </div>
         </div>
       </div>
     </section>

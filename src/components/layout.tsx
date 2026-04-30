@@ -40,13 +40,13 @@ const Layout = ({ title, description, children }: LayoutProps) => {
     <main
       ref={mainRef}
       aria-label={title ?? description ?? "Portfolio content"}
-      className="relative min-h-screen w-full overflow-hidden bg-background text-text before:pointer-events-none before:fixed before:inset-0 before:z-0 before:bg-[linear-gradient(rgba(0,39,44,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,39,44,0.05)_1px,transparent_1px)] before:bg-[size:72px_72px] before:opacity-70 dark:before:bg-[linear-gradient(rgba(225,255,81,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(225,255,81,0.055)_1px,transparent_1px)]"
+      className="app-frame relative min-h-screen w-full overflow-x-clip bg-background text-text"
     >
       <Tooltip title={darkMode ? "Light Mode" : "Dark Mode"}>
         <IconButton
           aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
           onClick={handleDarkmode}
-          className="fixed right-4 top-4 z-50 border border-border bg-card/75 text-text shadow-[var(--shadow-soft)] backdrop-blur-xl hover:border-primary hover:bg-primary hover:text-primary-foreground"
+          className="fixed right-4 top-4 z-50 border border-border bg-card/75 text-text shadow-(--shadow-soft) backdrop-blur-xl hover:border-primary hover:bg-primary hover:text-primary-foreground"
         >
           {darkMode ? <MdLightMode /> : <MdDarkMode />}
         </IconButton>

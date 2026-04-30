@@ -9,7 +9,7 @@ export const main_class = () => ({
     "bg-card/60 text-text backdrop-blur-xl hover:bg-primary hover:text-primary-foreground",
   cardContainer:
     "flex min-h-screen flex-col items-center justify-center gap-4 p-8",
-  container: "mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8",
+  container: "mx-auto w-full px-5 sm:px-7 lg:px-9",
   navLink: "font-poppins font-semibold text-primary hover:text-text",
   projectCard: "max-w-[320px]",
 });

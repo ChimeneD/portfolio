@@ -1,139 +1,143 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
-
 import { Tooltip } from "@/components/tooltip";
-import { Typography } from "@/components/typography";
 import { VscGithub } from "react-icons/vsc";
 import { RiLinkedinBoxLine, RiInstagramLine } from "react-icons/ri";
 import { HiOutlineArrowRight, HiOutlineSparkles } from "react-icons/hi";
-import { header_classes } from "@/utils/styles/javascript/header";
-import { main_class } from "@/utils/styles/javascript/main";
 
 const stats = [
-  { value: "3+", label: "Years building" },
-  { value: "12+", label: "Product surfaces" },
-  { value: "Full", label: "Stack fluency" },
+  { value: "3+", label: "Years in product delivery" },
+  { value: "20+", label: "Campaign and app surfaces" },
+  { value: "100%", label: "Detail obsessed" },
 ];
 
 const Header = () => {
-  const classes = main_class();
-  const header_class = header_classes();
-
   return (
-    <header className="overflow-hidden">
-      <div className={`${classes.container} ${header_class.header_container}`}>
-        <div className="max-lg:text-center" data-reveal="stagger-group">
-          <span
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-4 py-2 text-sm font-bold text-text shadow-(--shadow-soft) backdrop-blur-xl"
-            data-stagger-item
-          >
-            <HiOutlineSparkles className="text-primary" />
-            Fullstack developer and interface craftsman
+    <header id="home" className="relative min-h-screen overflow-hidden pt-24">
+      <div className="pointer-events-none absolute inset-0">
+        <img
+          src="/images/daniel.JPG"
+          alt="Creative background"
+          className="h-full w-full object-cover grayscale"
+        />
+        <div className="media-scrim absolute inset-0" />
+      </div>
+
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-10 px-4 pb-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+        <div
+          className="flex min-h-[66vh] flex-col justify-center"
+          data-reveal="stagger-group"
+        >
+          <span className="section-kicker w-fit" data-stagger-item>
+            <HiOutlineSparkles className="text-sm" />
+            Creative Strategy x Fullstack Build
           </span>
-          <Typography
-            variant="h1"
-            className={`${header_class.name} mt-8`}
-            data-stagger-item
-          >
-            Daniel C. Amadi
-          </Typography>
+
+          <h1 className="section-title mt-7 max-w-4xl" data-stagger-item>
+            Ideas that turn heads
+            <span className="block text-primary">and move people to act.</span>
+          </h1>
+
           <p
-            className="mt-7 max-w-2xl text-lg leading-8 text-text-alt max-lg:mx-auto max-sm:text-base"
+            className="mt-6 max-w-2xl text-base text-text-alt sm:text-lg"
             data-stagger-item
           >
-            I build expressive, reliable web products with a sharp eye for
-            interaction, performance, and the tiny details that make interfaces
-            feel expensive.
+            I'm Daniel C. Amadi. I design and engineer bold digital experiences
+            for brands and products that want clarity, momentum, and measurable
+            lift.
           </p>
-          <div className={header_class.cta} data-stagger-item>
+
+          <div className="mt-10 flex flex-wrap gap-3" data-stagger-item>
             <a
-              href="/assets/CV.pdf"
-              download="DC_AMADI_CV"
-              className={`${classes.btn} ${classes.btn_outlined}`}
+              href="#portfolio"
+              className="inline-flex items-center gap-2 border border-primary bg-primary px-5 py-3 text-sm font-semibold uppercase tracking-widest text-primary-foreground transition-colors hover:bg-transparent hover:text-primary"
             >
-              Download CV
+              Explore Work
+              <HiOutlineArrowRight />
             </a>
             <a
               href="#contact"
-              className={`${classes.btn} ${classes.btn_contained}`}
+              className="inline-flex items-center gap-2 border border-border bg-card/75 px-5 py-3 text-sm font-semibold uppercase tracking-widest text-text transition-colors hover:border-primary hover:text-primary"
             >
-              Let's Talk <HiOutlineArrowRight />
+              Start a Project
             </a>
           </div>
+
           <div
-            className="mt-10 grid max-w-xl grid-cols-3 gap-3 max-lg:mx-auto max-sm:grid-cols-1"
+            className="mt-12 grid max-w-3xl gap-3 sm:grid-cols-3"
             data-stagger-item
           >
             {stats.map((item) => (
-              <article
-                key={item.label}
-                className="rounded-2xl border border-border bg-card/70 p-4 text-left shadow-[var(--shadow-soft)] backdrop-blur-xl max-lg:text-center"
-              >
-                <strong className="block text-2xl font-black text-text">
+              <article key={item.label} className="section-shell p-4">
+                <strong className="block text-3xl font-black leading-none text-text">
                   {item.value}
                 </strong>
-                <span className="text-xs font-semibold uppercase tracking-[0.16em] text-text-alt">
+                <span className="mt-2 block text-xs uppercase tracking-[0.16em] text-text-alt">
                   {item.label}
                 </span>
               </article>
             ))}
           </div>
-          <div className={header_class.header_socials} data-stagger-item>
-            <Tooltip title="Instagram">
-              <a
-                target="_blank"
-                href="https://www.instagram.com/daniel.amadi/"
-                rel="noreferrer"
-                aria-label="Instagram"
-              >
-                <RiInstagramLine />
-              </a>
-            </Tooltip>
-            <Tooltip title="LinkedIn">
-              <a
-                target="_blank"
-                href="https://www.linkedin.com/in/daniel-amadi-7ba646129"
-                rel="noreferrer"
-                aria-label="LinkedIn"
-              >
-                <RiLinkedinBoxLine />
-              </a>
-            </Tooltip>
-            <Tooltip title="Github">
-              <a
-                target="_blank"
-                href="https://github.com/ChimeneD"
-                rel="noreferrer"
-                aria-label="Github"
-              >
-                <VscGithub />
-              </a>
-            </Tooltip>
-          </div>
         </div>
 
-        <div className="relative" data-reveal="image" data-delay="0.12">
-          <article className="relative mx-auto aspect-[0.82] w-full max-w-[430px] overflow-hidden rounded-[2rem] border border-border bg-card/70 p-3 shadow-[var(--shadow-lift)] backdrop-blur-xl">
+        <div
+          className="flex flex-col justify-center gap-4"
+          data-reveal="image"
+          data-delay="0.12"
+        >
+          <article className="section-shell overflow-hidden p-2">
             <img
-              className="h-full rounded-[1.4rem] object-cover object-top"
+              className="h-136 w-full object-cover object-top"
               src="/images/daniel.JPG"
               alt="Daniel C. Amadi"
             />
-            <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-primary/40 bg-secondary/90 p-4 text-secondary-foreground shadow-[var(--shadow-soft)] backdrop-blur-xl">
-              <span className="text-xs font-bold uppercase tracking-[0.18em] text-primary">
-                Available for selected work
-              </span>
-              <p className="mt-2 text-sm leading-6">
-                Product engineering, modern frontends, API design, and polished
-                web experiences.
-              </p>
-            </div>
           </article>
+          <div className="section-shell p-4">
+            <p className="text-xs uppercase tracking-[0.14em] text-primary">
+              Available for select collaborations
+            </p>
+            <p className="mt-2 text-sm text-text-alt">
+              Product websites, interactive campaigns, high-performance web
+              apps, and growth-focused frontend systems.
+            </p>
+            <div className="mt-4 flex items-center gap-2">
+              <Tooltip title="Instagram">
+                <a
+                  target="_blank"
+                  href="https://www.instagram.com/daniel.amadi/"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="inline-flex size-9 items-center justify-center border border-border text-lg transition-colors hover:border-primary hover:text-primary"
+                >
+                  <RiInstagramLine />
+                </a>
+              </Tooltip>
+              <Tooltip title="LinkedIn">
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/daniel-amadi-7ba646129"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="inline-flex size-9 items-center justify-center border border-border text-lg transition-colors hover:border-primary hover:text-primary"
+                >
+                  <RiLinkedinBoxLine />
+                </a>
+              </Tooltip>
+              <Tooltip title="Github">
+                <a
+                  target="_blank"
+                  href="https://github.com/ChimeneD"
+                  rel="noopener noreferrer"
+                  aria-label="Github"
+                  className="inline-flex size-9 items-center justify-center border border-border text-lg transition-colors hover:border-primary hover:text-primary"
+                >
+                  <VscGithub />
+                </a>
+              </Tooltip>
+            </div>
+          </div>
         </div>
-        <a href="#contact" className={header_class.scroll_down}>
-          Scroll Down
-        </a>
       </div>
     </header>
   );

@@ -1,76 +1,61 @@
 import React from "react";
-import { Typography } from "@/components/typography";
-import { skill_classes } from "../../utils/styles/javascript/skill";
-import { main_class } from "../../utils/styles/javascript/main";
 import { HiBadgeCheck } from "react-icons/hi";
 
 const skillGroups = [
   {
-    title: "Frontend Development",
-    classKey: "skill_frontend" as const,
+    title: "Frontend Craft",
     skills: [
-      ["HTML", "Experienced"],
-      ["CSS", "Intermediate"],
-      ["Javascript", "Intermediate"],
-      ["ReactJS", "Experienced"],
-      ["Tailwind CSS", "Intermediate"],
-      ["UI/UX-Figma", "Basic"],
+      ["React / Next.js", "Advanced"],
+      ["TypeScript", "Advanced"],
+      ["Tailwind CSS", "Advanced"],
+      ["Animation Systems", "Strong"],
+      ["Design Implementation", "Strong"],
     ],
   },
   {
-    title: "Backend Development",
-    classKey: "skill_backend" as const,
+    title: "Backend & Delivery",
     skills: [
-      ["MongoDB", "Intermediate"],
-      ["NodeJS", "Intermediate"],
-      ["GraphQL", "Intermediate"],
-      ["MySQL", "Basic"],
-      ["Python", "Basic"],
-      ["API Design", "Practical"],
+      ["Node.js", "Advanced"],
+      ["GraphQL", "Strong"],
+      ["SQL / MongoDB", "Strong"],
+      ["API Architecture", "Strong"],
+      ["Deployment Workflows", "Strong"],
     ],
   },
 ];
 
 const Skills = () => {
-  const classes = main_class();
-  const skill_class = skill_classes();
-
   return (
-    <section id="skills" className="py-28 max-lg:py-20">
-      <div className={`${classes.container} mb-14`} data-reveal="text">
-        <Typography className="text-center" variant="h5">
-          Capabilities
-        </Typography>
-        <Typography className="mx-auto mt-4 max-w-3xl text-center" variant="h2">
-          A practical stack for thoughtful, production-ready web work.
-        </Typography>
-      </div>
-      <div className={`${classes.container} ${skill_class.skill_container}`}>
-        {skillGroups.map((group, groupIndex) => (
-          <div
-            className={skill_class[group.classKey]}
-            key={group.title}
-            data-reveal="stagger-group"
-            data-delay={groupIndex * 0.08}
-          >
-            <Typography variant="h3">{group.title}</Typography>
-            <div className={skill_class.skill_content}>
-              {group.skills.map(([name, level]) => (
-                <article
-                  className={skill_class.skill_details}
-                  key={name}
-                  data-stagger-item
-                >
-                  <HiBadgeCheck className={skill_class.skill_icon} />
-                  <div>
-                    <Typography variant="h4">{name}</Typography>
-                    <small>{level}</small>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        ))}
+    <section id="skills" className="site-section pt-0">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl" data-reveal="text">
+          <span className="section-kicker">Capabilities</span>
+          <h2 className="section-title mt-5">Stack depth for ambitious product work.</h2>
+        </div>
+
+        <div className="mt-10 grid gap-5 lg:grid-cols-2" data-reveal="stagger-group">
+          {skillGroups.map((group) => (
+            <article className="section-shell p-6" key={group.title} data-stagger-item>
+              <h3 className="text-2xl leading-tight">{group.title}</h3>
+              <ul className="mt-6 grid gap-4">
+                {group.skills.map(([name, level]) => (
+                  <li
+                    className="flex items-start gap-3 border-t border-border pt-4 first:border-t-0 first:pt-0"
+                    key={name}
+                  >
+                    <HiBadgeCheck className="mt-0.5 shrink-0 text-lg text-primary" />
+                    <div className="flex w-full items-center justify-between gap-3">
+                      <span className="text-sm font-medium text-text">{name}</span>
+                      <span className="text-xs uppercase tracking-[0.12em] text-text-alt">
+                        {level}
+                      </span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

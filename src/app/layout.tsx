@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import "@/styles/global.css";
-import { Figtree } from "next/font/google";
+import { Archivo, Raleway } from "next/font/google";
 import { cn } from "@/types/lib/utils";
 import { AppProviders } from "./providers";
 
-const figtree = Figtree({ subsets: ["latin"], variable: "--font-sans" });
+const archivo = Archivo({ subsets: ["latin"], variable: "--font-sans" });
+const raleway = Raleway({ subsets: ["latin"], variable: "--font-display" });
 
 export const metadata: Metadata = {
   title: "Daniel C. Amadi | Portfolio",
@@ -21,7 +22,7 @@ export default function RootLayout({
       lang="en"
       color-scheme="light"
       data-scroll-behavior="smooth"
-      className={cn("font-sans", figtree.variable)}
+      className={cn("font-sans", archivo.variable, raleway.variable)}
       suppressHydrationWarning
     >
       <body>

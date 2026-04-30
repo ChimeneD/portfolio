@@ -15,7 +15,7 @@ const ProjectCard = (props: ProjectCardProps) => {
   const theClass = main_class();
   return (
     <article
-      className={`overflow-hidden rounded-[1.5rem] border border-border bg-card/75 text-card-foreground shadow-(--shadow-soft) backdrop-blur-xl ${theClass.projectCard}`}
+      className={`overflow-hidden rounded-[1.5rem] border border-border bg-card/75 text-card-foreground shadow-[var(--shadow-soft)] backdrop-blur-xl ${theClass.projectCard}`}
     >
       <header className="flex items-center gap-3 p-4 font-josefin-sans">
         <span
@@ -27,7 +27,7 @@ const ProjectCard = (props: ProjectCardProps) => {
         <Typography variant="h4">{props.name}</Typography>
       </header>
       <Image
-        className="m-auto h-45 w-57.5 object-contain p-5"
+        className="m-auto h-[180px] w-[230px] object-contain p-5"
         alt={props.name}
         height={180}
         src={props.image}

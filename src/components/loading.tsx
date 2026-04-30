@@ -6,67 +6,28 @@ import { main_class } from "../utils/styles/javascript/main";
 import { useAppStore } from "@/stores/app-store";
 
 const Loading = () => {
-  const darkMode = useAppStore((state) => state.darkMode);
   const theClass = main_class();
-  return darkMode ? (
+  const darkMode = useAppStore((state) => state.darkMode);
+
+  return (
     <section
-      style={{
-        background: "#121212",
-        height: "100vh",
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+      className={`flex h-screen w-full items-center justify-center bg-background ${
+        darkMode ? "text-primary" : "text-secondary"
+      }`}
     >
       <Typography
-        style={{ color: "#F4EEFF", fontFamily: "Comforter" }}
         id="loading"
-        className={theClass.animTypewriter}
+        className={`${theClass.animTypewriter} font-montez text-[clamp(2rem,8vw,4rem)] text-current`}
       >
         {`<Loading.../>`}
       </Typography>
       <Typography
-        style={{ fontSize: 30, color: "#F4EEFF", fontFamily: "Comforter" }}
-        id="loading"
-        className={theClass.blink}
+        id="loading-cursor"
+        className={`${theClass.blink} font-montez text-[clamp(2rem,8vw,4rem)] text-current`}
       >
         _
       </Typography>
     </section>
-  ) : (
-    <>
-      <section
-        style={{
-          background: "#fafafa",
-          height: "100vh",
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Typography
-          style={{
-            color: "#370665",
-            fontFamily: "Comforter",
-          }}
-          className={theClass.animTypewriter}
-        >
-          {`<Loading.../>`}
-        </Typography>
-        <Typography
-          style={{
-            fontSize: "30px",
-            color: "#370665",
-            fontFamily: "Comforter",
-          }}
-          className={theClass.blink}
-        >
-          _
-        </Typography>
-      </section>
-    </>
   );
 };
 

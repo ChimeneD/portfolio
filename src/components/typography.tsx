@@ -169,12 +169,12 @@ type TypographyProps = React.HTMLAttributes<HTMLElement> & {
 };
 
 const variantClass: Record<TypographyVariant, string> = {
-  h1: "text-[clamp(2.5rem,5vw,3.5rem)] leading-[1.1] font-bold text-primary",
-  h2: "text-[clamp(1.5rem,5vw,2.5rem)] leading-[1.1] font-semibold text-primary",
-  h3: "text-[clamp(1.25rem,5vw,2rem)] leading-[1.1] font-medium text-primary",
-  h4: "text-[clamp(1rem,5vw,1.5rem)] leading-[1.1] font-normal text-primary",
-  h5: "text-[clamp(0.875rem,5vw,1.25rem)] leading-[1.1] font-light text-primary",
-  h6: "text-[clamp(0.75rem,5vw,1rem)] leading-[1.1] font-extralight text-primary",
+  h1: "text-[clamp(2.5rem,5vw,3.5rem)] leading-[1.05] font-bold text-text",
+  h2: "text-[clamp(2rem,5vw,3.2rem)] leading-[1.05] font-bold text-text",
+  h3: "text-[clamp(1.25rem,3vw,2rem)] leading-[1.15] font-semibold text-text",
+  h4: "text-[clamp(1rem,2.2vw,1.35rem)] leading-[1.2] font-semibold text-text",
+  h5: "text-[clamp(0.8rem,1.6vw,0.95rem)] leading-[1.3] font-bold uppercase tracking-[0.18em] text-primary",
+  h6: "text-[clamp(0.75rem,1.2vw,0.9rem)] leading-[1.3] font-semibold text-text-alt",
   body1: "text-base leading-[1.6] text-text",
   body2: "text-sm leading-[1.55] text-text-alt",
   caption: "text-xs leading-normal text-primary",

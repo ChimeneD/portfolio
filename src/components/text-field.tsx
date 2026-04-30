@@ -30,16 +30,18 @@ export const TextField = React.forwardRef<
     ref,
   ) => {
     const fieldId = id ?? name;
-    const fieldClass = `text-field__control${error ? " text-field__control--error" : ""}`;
+    const fieldClass = `min-h-12 w-full rounded-2xl border bg-background/50 px-4 py-3 font-[inherit] text-text transition-all duration-200 placeholder:text-text-alt/70 focus:border-primary focus:ring-3 focus:ring-ring/25 ${
+      error ? "border-destructive" : "border-border"
+    }`;
 
     return (
       <label
-        className={`text-field${fullWidth ? " text-field--full" : ""}${
+        className={`flex flex-col gap-2${fullWidth ? " w-full" : ""}${
           className ? ` ${className}` : ""
         }`}
         htmlFor={fieldId}
       >
-        <span className="text-field__label">{label}</span>
+        <span className="text-sm font-semibold text-text">{label}</span>
         {multiline ? (
           <textarea
             ref={ref as React.ForwardedRef<HTMLTextAreaElement>}
@@ -61,7 +63,7 @@ export const TextField = React.forwardRef<
           />
         )}
         {helperText ? (
-          <span className="text-field__helper" role={error ? "alert" : undefined}>
+          <span className="text-xs text-destructive" role={error ? "alert" : undefined}>
             {helperText}
           </span>
         ) : null}

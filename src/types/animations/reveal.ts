@@ -83,10 +83,20 @@ export const setupRevealOnScroll = (
   const targets = Array.from(scope.querySelectorAll<HTMLElement>("[data-reveal]"));
   if (!targets.length) return () => undefined;
 
-  const rootSelector = options?.rootSelector ?? ".app-scrollbar";
-  const root = document.querySelector(rootSelector) as HTMLElement | null;
+  const root = options?.rootSelector
+    ? (document.querySelector(options.rootSelector) as HTMLElement | null)
+    : null;
   const threshold = options?.threshold ?? 0.22;
   const rootMargin = options?.rootMargin ?? "0px 0px -10% 0px";
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    targets.forEach((target) => {
+      target.style.opacity = "1";
+      target.style.transform = "none";
+      target.style.filter = "none";
+    });
+    return () => undefined;
+  }
 
   const ctx = gsap.context(() => {
     targets.forEach((target) => {

@@ -47,7 +47,6 @@ const Construction = () => {
     <Layout title="Home">
       <section
         className={theClass.cardContainer}
-        style={{ justifyContent: "center" }}
       >
         <Spinner />
         <Typography>Website still under construction</Typography>

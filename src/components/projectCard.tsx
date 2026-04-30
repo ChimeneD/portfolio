@@ -14,28 +14,29 @@ type ProjectCardProps = {
 const ProjectCard = (props: ProjectCardProps) => {
   const theClass = main_class();
   return (
-    <article className={`project-card ${theClass.projectCard}`}>
-      <header className="project-card__header">
+    <article
+      className={`overflow-hidden rounded-[1.5rem] border border-border bg-card/75 text-card-foreground shadow-(--shadow-soft) backdrop-blur-xl ${theClass.projectCard}`}
+    >
+      <header className="flex items-center gap-3 p-4 font-josefin-sans">
         <span
           aria-label={props.name}
-          className="project-card__avatar"
-          style={{ backgroundColor: props.color }}
+          className="inline-flex size-10 items-center justify-center rounded-full bg-primary font-bold text-primary-foreground"
         >
-            {props.name[0]}
+          {props.name[0]}
         </span>
         <Typography variant="h4">{props.name}</Typography>
       </header>
       <Image
-        className="project-card__media"
+        className="m-auto h-45 w-57.5 object-contain p-5"
         alt={props.name}
         height={180}
         src={props.image}
         width={230}
       />
-      <div className="project-card__content">
+      <div className="p-4">
         <Typography variant="body2">{props.description}</Typography>
       </div>
-      <footer className="project-card__actions">
+      <footer className="p-4">
         <a
           href={props.link}
           target="_blank"

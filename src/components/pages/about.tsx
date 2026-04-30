@@ -3,52 +3,81 @@
 import React from "react";
 import { Typography } from "@/components/typography";
 import { about_classes } from "../../utils/styles/javascript/about";
+import { main_class } from "../../utils/styles/javascript/main";
 import { BsAwardFill } from "react-icons/bs";
 import { BiPaint } from "react-icons/bi";
 import { FaRegFolderOpen } from "react-icons/fa";
 
 const img_url = "/images/daniel.JPG";
+
+const highlights = [
+  {
+    icon: BsAwardFill,
+    title: "Experience",
+    detail: "3+ years building",
+  },
+  {
+    icon: FaRegFolderOpen,
+    title: "Projects",
+    detail: "Product work and experiments",
+  },
+  {
+    icon: BiPaint,
+    title: "Taste",
+    detail: "Interfaces with polish",
+  },
+];
+
 const About = () => {
+  const classes = main_class();
   const about_class = about_classes();
+
   return (
-    <section id="about">
-      <Typography variant="h5">What about me?</Typography>
-      <Typography variant="h2" style={{ marginBottom: "4rem" }}>
-        About Me
-      </Typography>
-      <div className="container about-container">
-        <div className="about-me">
-          <div className="about-me-image">
-            <img src={img_url} alt="me" />
+    <section id="about" className="py-28 max-lg:py-20">
+      <div className={`${classes.container} mb-14`} data-reveal="text">
+        <Typography className="text-center" variant="h5">
+          About
+        </Typography>
+        <Typography className="mx-auto mt-4 max-w-3xl text-center" variant="h2">
+          Quietly technical, deeply visual, always tuned to the user.
+        </Typography>
+      </div>
+      <div className={`${classes.container} ${about_class.about_container}`}>
+        <div className={about_class.about_me} data-reveal="image">
+          <div className={about_class.about_me_image}>
+            <img src={img_url} alt="Daniel C. Amadi" />
           </div>
         </div>
-        <div className={about_class.about_content}>
+        <div className={about_class.about_content} data-reveal="stagger-group">
           <div className={about_class.about_cards}>
-            <article className={about_class.about_card}>
-              <BsAwardFill className={about_class.about_icon} />
-              <Typography variant="h5">Experience</Typography>
-              <small>+3 years coding</small>
-            </article>
-            <article className={about_class.about_card}>
-              <FaRegFolderOpen className={about_class.about_icon} />
-              <Typography variant="h5">Projects</Typography>
-              <small>+2 projects pending</small>
-            </article>
-            <article className={about_class.about_card}>
-              <BiPaint className={about_class.about_icon} />
-              <Typography variant="h5">Skills</Typography>
-              <small>Always evolving</small>
-            </article>
+            {highlights.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <article
+                  className={about_class.about_card}
+                  key={item.title}
+                  data-stagger-item
+                >
+                  <Icon className={about_class.about_icon} />
+                  <Typography variant="h5">{item.title}</Typography>
+                  <small>{item.detail}</small>
+                </article>
+              );
+            })}
           </div>
-          <p>
-            {` <!-- Hello World! --> `}I'm Daniel Chimene Amadi, a self thought
-            fullstack web developer with quite a bit of Experience. I'm a
-            computer engineering graduate (Diploma and Bachelors) from the Cape
-            Peninsula University of Technology and I like to draw, design and
-            build sweet, beautiful responsive websites (like this one) and I
-            look forward to hearing from you about exciting new projects.
+          <p data-stagger-item>
+            I'm Daniel Chimene Amadi, a self-taught fullstack developer with a
+            computer engineering background from the Cape Peninsula University
+            of Technology. I like building responsive systems that feel calm,
+            sharp, and intentional, from the API contract all the way to the
+            micro-interactions on the page.
           </p>
-          <a className="btn btn-outlined" href="#contact">
+          <a
+            className={`${classes.btn} ${classes.btn_outlined}`}
+            href="#contact"
+            data-stagger-item
+          >
             Let's Talk
           </a>
         </div>

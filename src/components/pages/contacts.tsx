@@ -92,19 +92,23 @@ const Contacts = () => {
   });
 
   return (
-    <section id="contact">
-      <Typography variant="h5">How can you reach me?</Typography>
-      <Typography variant="h2" style={{ marginBottom: "4rem" }}>
-        Get in touch
-      </Typography>
+    <section id="contact" className="py-28 pb-36 max-lg:py-20">
+      <div className={`${classes.container} mb-14`} data-reveal="text">
+        <Typography className="text-center" variant="h5">
+          Contact
+        </Typography>
+        <Typography className="mx-auto mt-4 max-w-3xl text-center" variant="h2">
+          Have a sharp idea, tricky product, or polished web build in mind?
+        </Typography>
+      </div>
       <div
         className={`${classes.container} ${contact_class.contact_container}`}
       >
-        <div className={contact_class.contact_options}>
-          <article className={contact_class.contact_option}>
+        <div className={contact_class.contact_options} data-reveal="stagger-group">
+          <article className={contact_class.contact_option} data-stagger-item>
             <MdOutlineMarkEmailUnread className={contact_class.contact_icon} />
             <Typography variant="h4">Email</Typography>
-            <Typography variant="h5">hello@chimene.dev</Typography>
+            <Typography variant="body2">hello@chimene.dev</Typography>
             <a
               href="mailto:hello@chimene.dev"
               className={`${classes.btn} ${classes.btn_contained}`}
@@ -112,20 +116,21 @@ const Contacts = () => {
               Send a message
             </a>
           </article>
-          <article className={contact_class.contact_option}>
+          <article className={contact_class.contact_option} data-stagger-item>
             <RiWhatsappLine className={contact_class.contact_icon} />
             <Typography variant="h4">Whatsapp</Typography>
-            <Typography variant="h5">+27783355292</Typography>
+            <Typography variant="body2">+27783355292</Typography>
             <a
               href="https://wa.me/+27783355292"
               className={`${classes.btn} ${classes.btn_contained}`}
               target="_blank"
+              rel="noreferrer"
             >
               Send a message
             </a>
           </article>
         </div>
-        <form onSubmit={formik.handleSubmit}>
+        <form onSubmit={formik.handleSubmit} data-reveal="image">
           <TextField
             name="email"
             id="email"

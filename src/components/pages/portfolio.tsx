@@ -157,15 +157,12 @@ const Portfolio = () => {
           </h2>
         </div>
 
-        <div
-          className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:auto-rows-fr xl:grid-cols-3"
-          data-reveal="stagger-group"
-        >
+        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:auto-rows-fr xl:grid-cols-3">
           {projects.map((item, index) => (
             <article
               className="section-shell relative group flex h-full flex-col p-5 sm:p-6"
               key={item.id}
-              data-stagger-item
+              data-reveal="image"
             >
               <div className="mb-4 flex items-center justify-between border-b border-border pb-4">
                 <p className="text-[0.66rem] font-semibold uppercase tracking-[0.2em] text-text-alt">

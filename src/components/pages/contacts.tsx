@@ -1,7 +1,6 @@
 import { TextField } from "@/components/text-field";
 import { MdOutlineMarkEmailUnread } from "react-icons/md";
 import { RiWhatsappLine } from "react-icons/ri";
-import emailjs from "@emailjs/browser";
 import { useFormik } from "formik";
 import { toast } from "sonner";
 import * as Yup from "yup";
@@ -45,43 +44,35 @@ const Contacts = () => {
     validationSchema: contactValidationSchema,
     onSubmit: async ({ email, name, subject, message }, { resetForm }) => {
       try {
-        const serviceId = process.env.SERVICE_ID;
-        const templateId = process.env.TEMPLATE_ID;
-        const userId = process.env.USER_ID;
+        const response = await fetch("/api/sendEmail", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            name,
+            subject,
+            message,
+          }),
+        });
 
-        if (!serviceId || !templateId || !userId) {
-          toast.error("Email service is not configured.");
-          return;
+        if (!response.ok) {
+          const data = (await response.json().catch(() => null)) as {
+            message?: string;
+          } | null;
+          throw new Error(data?.message ?? "Message failed to send.");
         }
-
-        const templateParams = {
-          from_name: name,
-          to_name: "Daniel Amadi",
-          subject,
-          reply_to: email,
-          message,
-        };
-
-        const response = await emailjs.send(
-          serviceId,
-          templateId,
-          templateParams,
-          userId,
-        );
 
         if (response.status === 200) {
           resetForm();
-          toast.success("SUCCESS... Message Sent!!!");
+          toast.success("Success. Message sent.");
         }
       } catch (err) {
         const message =
-          err && typeof err === "object" && "text" in err
-            ? String(err.text)
-            : err instanceof Error
-              ? err.message
-              : "Message failed to send.";
+          err instanceof Error ? err.message : "Message failed to send.";
 
-        toast.error(`FAILED... ${message}`);
+        toast.error(`Failed. ${message}`);
       }
     },
   });
@@ -129,16 +120,39 @@ const Contacts = () => {
           </div>
 
           <form
-            className="section-shell space-y-4 p-5"
+            className="section-shell relative overflow-hidden space-y-4 p-5 sm:p-7"
             onSubmit={formik.handleSubmit}
             data-reveal="image"
+            style={{
+              borderColor:
+                "color-mix(in srgb, var(--primary) 28%, var(--border))",
+              background:
+                "linear-gradient(160deg, color-mix(in srgb, var(--card) 88%, transparent) 0%, color-mix(in srgb, var(--primary) 12%, transparent) 100%)",
+              boxShadow: "var(--shadow-soft)",
+            }}
           >
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-primary/70" />
+            <div className="mb-2 space-y-2">
+              <p className="inline-flex items-center border border-primary/45 bg-primary/10 px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-primary">
+                Contact Form
+              </p>
+              <h3 className="text-2xl leading-tight sm:text-3xl">
+                Tell me what you are building.
+              </h3>
+              <p className="text-sm text-text-alt">
+                Share your goals, timeline, and constraints. You will get a
+                thoughtful response from{" "}
+                <span className="text-primary">hello@chimene.dev</span>.
+              </p>
+            </div>
             <TextField
               name="email"
               id="email"
               label="Email Address"
               type="email"
               fullWidth
+              // inputClassName="rounded-xl border-primary/25 bg-card/60 px-4 py-3.5 focus:border-primary focus:ring-primary/25"
+              // labelClassName="uppercase tracking-[0.14em] text-[0.68rem] text-text-alt"
               value={formik.values.email}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -151,6 +165,8 @@ const Contacts = () => {
               label="Full Name"
               type="text"
               fullWidth
+              // inputClassName="rounded-xl border-primary/25 bg-card/60 px-4 py-3.5 focus:border-primary focus:ring-primary/25"
+              // labelClassName="uppercase tracking-[0.14em] text-[0.68rem] text-text-alt"
               value={formik.values.name}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -163,6 +179,8 @@ const Contacts = () => {
               label="Subject"
               type="text"
               fullWidth
+              // inputClassName="rounded-xl border-primary/25 bg-card/60 px-4 py-3.5 focus:border-primary focus:ring-primary/25"
+              // labelClassName="uppercase tracking-[0.14em] text-[0.68rem] text-text-alt"
               value={formik.values.subject}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -177,6 +195,8 @@ const Contacts = () => {
               multiline
               minRows={6}
               fullWidth
+              // inputClassName="rounded-xl border-primary/25 bg-card/60 px-4 py-3.5 focus:border-primary focus:ring-primary/25"
+              // labelClassName="uppercase tracking-[0.14em] text-[0.68rem] text-text-alt"
               value={formik.values.message}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -185,7 +205,7 @@ const Contacts = () => {
             />
             <button
               type="submit"
-              className="inline-flex cursor-pointer items-center border border-primary bg-primary px-5 py-3 text-xs font-semibold uppercase tracking-widest text-white transition-colors hover:bg-transparent hover:text-primary disabled:cursor-not-allowed disabled:opacity-70"
+              className="inline-flex min-h-12 cursor-pointer items-center justify-center rounded-none border border-primary bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-primary-foreground shadow-(--shadow-primary) transition-all duration-200 hover:-translate-y-0.5 hover:bg-transparent hover:text-primary disabled:cursor-not-allowed disabled:opacity-70"
               disabled={formik.isSubmitting}
             >
               {formik.isSubmitting ? "Sending..." : "Send Message"}

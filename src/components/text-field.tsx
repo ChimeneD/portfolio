@@ -4,7 +4,10 @@ type TextFieldProps = {
   error?: boolean;
   fullWidth?: boolean;
   helperText?: React.ReactNode;
+  helperTextClassName?: string;
+  inputClassName?: string;
   label: string;
+  labelClassName?: string;
   multiline?: boolean;
   minRows?: number;
 } & Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> &
@@ -20,8 +23,11 @@ export const TextField = React.forwardRef<
       error = false,
       fullWidth = false,
       helperText,
+      helperTextClassName,
       id,
+      inputClassName,
       label,
+      labelClassName,
       multiline = false,
       minRows,
       name,
@@ -32,7 +38,7 @@ export const TextField = React.forwardRef<
     const fieldId = id ?? name;
     const fieldClass = `min-h-12 w-full rounded-none border bg-background/50 px-4 py-3 font-[inherit] text-text transition-all duration-200 placeholder:text-text-alt/70 focus:border-primary focus:ring-3 focus:ring-ring/25 ${
       error ? "border-destructive" : "border-border"
-    }`;
+    }${inputClassName ? ` ${inputClassName}` : ""}`;
 
     return (
       <label
@@ -41,7 +47,13 @@ export const TextField = React.forwardRef<
         }`}
         htmlFor={fieldId}
       >
-        <span className="text-sm font-semibold text-text">{label}</span>
+        <span
+          className={`text-sm font-semibold text-text${
+            labelClassName ? ` ${labelClassName}` : ""
+          }`}
+        >
+          {label}
+        </span>
         {multiline ? (
           <textarea
             ref={ref as React.ForwardedRef<HTMLTextAreaElement>}
@@ -64,7 +76,9 @@ export const TextField = React.forwardRef<
         )}
         {helperText ? (
           <span
-            className="text-xs text-destructive"
+            className={`text-xs text-destructive${
+              helperTextClassName ? ` ${helperTextClassName}` : ""
+            }`}
             role={error ? "alert" : undefined}
           >
             {helperText}

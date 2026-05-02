@@ -2,15 +2,16 @@ import React from "react";
 import Layout from "@/components/layout";
 
 const pageClass =
-  "mx-auto flex min-h-screen w-full max-w-4xl flex-col px-4 py-28 sm:px-6 lg:px-8";
+  "mx-auto flex min-h-screen w-full max-w-7xl flex-col px-4 py-28 sm:px-6 lg:px-8";
 const headingClass =
   "mt-12 text-center text-[clamp(2rem,5vw,3.2rem)] font-black leading-tight text-text first:mt-0";
 const introClass = "mx-auto mt-4 max-w-3xl text-center text-text-alt";
 const listClass =
-  "my-8 flex flex-col items-start justify-start gap-6 rounded-[1.5rem] border border-border bg-card/75 p-6 text-text-alt shadow-[var(--shadow-soft)] backdrop-blur-xl";
+  "my-8 flex flex-col items-start justify-start gap-6 p-12 rounded-none border border-border bg-card/75 p-6 text-text-alt shadow-[var(--shadow-soft)] backdrop-blur-xl";
 const nestedListClass =
   "ml-4 mt-2 flex list-disc flex-col items-start justify-start gap-1 marker:text-primary";
-const itemClass = "list-[lower-alpha] [&_h5]:font-bold [&_h5]:text-text [&_h6]:font-semibold [&_h6]:text-text";
+const itemClass =
+  "list-[lower-alpha] [&_h5]:font-bold [&_h5]:text-text [&_h6]:font-semibold [&_h6]:text-text";
 
 const TermsPage = () => {
   return (

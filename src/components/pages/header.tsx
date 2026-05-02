@@ -50,7 +50,7 @@ const Header = () => {
           <div className="mt-10 flex flex-wrap gap-3" data-stagger-item>
             <a
               href="#portfolio"
-              className="inline-flex items-center gap-2 border border-primary bg-primary px-5 py-3 text-sm font-semibold uppercase tracking-widest text-primary-foreground transition-colors hover:bg-transparent hover:text-primary"
+              className="inline-flex items-center gap-2 border border-primary bg-primary px-5 py-3 text-sm font-semibold uppercase tracking-widest text-white transition-colors hover:bg-transparent hover:text-primary"
             >
               Explore Work
               <HiOutlineArrowRight />

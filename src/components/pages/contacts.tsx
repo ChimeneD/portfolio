@@ -108,7 +108,7 @@ const Contacts = () => {
               <p className="mt-2 text-sm text-text-alt">hello@chimene.dev</p>
               <a
                 href="mailto:hello@chimene.dev"
-                className="mt-4 inline-flex border border-primary bg-primary px-4 py-2 text-xs font-semibold uppercase tracking-widest text-primary-foreground transition-colors hover:bg-transparent hover:text-primary"
+                className="mt-4 inline-flex border border-primary bg-primary px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition-colors hover:bg-transparent hover:text-primary"
               >
                 Send a message
               </a>
@@ -185,7 +185,7 @@ const Contacts = () => {
             />
             <button
               type="submit"
-              className="inline-flex cursor-pointer items-center border border-primary bg-primary px-5 py-3 text-xs font-semibold uppercase tracking-widest text-primary-foreground transition-colors hover:bg-transparent hover:text-primary disabled:cursor-not-allowed disabled:opacity-70"
+              className="inline-flex cursor-pointer items-center border border-primary bg-primary px-5 py-3 text-xs font-semibold uppercase tracking-widest text-white transition-colors hover:bg-transparent hover:text-primary disabled:cursor-not-allowed disabled:opacity-70"
               disabled={formik.isSubmitting}
             >
               {formik.isSubmitting ? "Sending..." : "Send Message"}

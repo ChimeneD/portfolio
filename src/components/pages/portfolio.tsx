@@ -190,7 +190,7 @@ const Portfolio = () => {
                     )}
                     <a
                       href={item.demoLink}
-                      className="inline-flex items-center justify-center border border-primary bg-primary text-primary-foreground px-4 py-2 text-xs font-semibold uppercase tracking-[0.15em] transition-colors hover:bg-transparent hover:text-primary max-sm:flex-1"
+                      className="inline-flex items-center justify-center border border-primary bg-primary px-4 py-2 text-xs font-semibold uppercase tracking-[0.15em] text-white transition-colors hover:bg-transparent hover:text-primary max-sm:flex-1"
                       target="_blank"
                       rel="noreferrer"
                     >

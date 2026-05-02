@@ -1,0 +1,25 @@
+# *
+User-agent: *
+Disallow: /profile
+
+# *
+User-agent: *
+Disallow: /cart
+
+# *
+User-agent: *
+Disallow: /checkout
+
+# *
+User-agent: *
+Disallow: /wishlist
+
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://chimene.dev
+
+# Sitemaps
+Sitemap: https://chimene.dev/sitemap.xml

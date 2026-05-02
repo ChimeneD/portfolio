@@ -1,0 +1,23 @@
+<svg width="1280" height="960" viewBox="0 0 1280 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="960" rx="72" fill="#140C24"/>
+  <rect x="52" y="52" width="1176" height="856" rx="52" fill="url(#paint0_linear_702_11)" stroke="#D3C5F6" stroke-opacity="0.4" stroke-width="2"/>
+  <circle cx="274" cy="296" r="118" fill="#D3C5F6" fill-opacity="0.2"/>
+  <circle cx="1006" cy="726" r="146" fill="#D3C5F6" fill-opacity="0.14"/>
+  <rect x="162" y="172" width="956" height="616" rx="32" fill="#201336" stroke="#D3C5F6" stroke-opacity="0.24"/>
+  <text x="214" y="276" fill="#D3C5F6" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="2">THE PHYSIQ STORE</text>
+  <rect x="214" y="320" width="318" height="406" rx="26" fill="#2C1B49"/>
+  <rect x="566" y="320" width="242" height="176" rx="24" fill="#312050"/>
+  <rect x="840" y="320" width="224" height="176" rx="24" fill="#312050"/>
+  <rect x="566" y="518" width="498" height="48" rx="14" fill="#D3C5F6" fill-opacity="0.14"/>
+  <rect x="566" y="584" width="498" height="48" rx="14" fill="#D3C5F6" fill-opacity="0.14"/>
+  <rect x="566" y="652" width="220" height="56" rx="16" fill="#D3C5F6"/>
+  <path d="M262 390C292 354 336 336 372 336C408 336 452 354 482 390" stroke="#D3C5F6" stroke-width="12" stroke-linecap="round"/>
+  <rect x="260" y="408" width="224" height="246" rx="20" fill="#3B2A60"/>
+  <text x="612" y="687" fill="#1D1234" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="1.2">SHOP NOW</text>
+  <defs>
+    <linearGradient id="paint0_linear_702_11" x1="640" y1="52" x2="640" y2="908" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2B1B48"/>
+      <stop offset="1" stop-color="#120A1F"/>
+    </linearGradient>
+  </defs>
+</svg>

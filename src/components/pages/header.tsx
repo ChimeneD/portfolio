@@ -7,8 +7,8 @@ import { RiLinkedinBoxLine, RiInstagramLine } from "react-icons/ri";
 import { HiOutlineArrowRight, HiOutlineSparkles } from "react-icons/hi";
 
 const stats = [
-  { value: "3+", label: "Years in product delivery" },
-  { value: "20+", label: "Campaign and app surfaces" },
+  { value: "5+", label: "Years in product delivery" },
+  { value: "8+", label: "Products built" },
   { value: "100%", label: "Detail obsessed" },
 ];
 
@@ -43,9 +43,8 @@ const Header = () => {
             className="mt-6 max-w-2xl text-base text-text-alt sm:text-lg"
             data-stagger-item
           >
-            I'm Daniel C. Amadi. I design and engineer bold digital experiences
-            for brands and products that want clarity, momentum, and measurable
-            lift.
+            I'm Daniel C. Amadi. I engineer bold digital experiences for brands
+            and products that want clarity, momentum, and measurable lift.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3" data-stagger-item>
@@ -98,8 +97,8 @@ const Header = () => {
               Available for select collaborations
             </p>
             <p className="mt-2 text-sm text-text-alt">
-              Product websites, interactive campaigns, high-performance web
-              apps, and growth-focused frontend systems.
+              Product websites, high-performance web apps, and growth-focused
+              frontend systems.
             </p>
             <div className="mt-4 flex items-center gap-2">
               <Tooltip title="Instagram">

@@ -102,10 +102,7 @@ const Contacts = () => {
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[0.46fr_0.54fr]">
           <div className="space-y-4" data-reveal="stagger-group">
-            <article
-              className="section-shell p-5"
-              data-stagger-item
-            >
+            <article className="section-shell p-5" data-stagger-item>
               <MdOutlineMarkEmailUnread className="text-2xl text-primary" />
               <h3 className="mt-3 text-2xl">Email</h3>
               <p className="mt-2 text-sm text-text-alt">hello@chimene.dev</p>
@@ -116,10 +113,7 @@ const Contacts = () => {
                 Send a message
               </a>
             </article>
-            <article
-              className="section-shell p-5"
-              data-stagger-item
-            >
+            <article className="section-shell p-5" data-stagger-item>
               <RiWhatsappLine className="text-2xl text-primary" />
               <h3 className="mt-3 text-2xl">WhatsApp</h3>
               <p className="mt-2 text-sm text-text-alt">+27 78 335 5292</p>
@@ -191,7 +185,7 @@ const Contacts = () => {
             />
             <button
               type="submit"
-              className="inline-flex items-center border border-primary bg-primary px-5 py-3 text-xs font-semibold uppercase tracking-widest text-primary-foreground transition-colors hover:bg-transparent hover:text-primary disabled:cursor-not-allowed disabled:opacity-70"
+              className="inline-flex cursor-pointer items-center border border-primary bg-primary px-5 py-3 text-xs font-semibold uppercase tracking-widest text-primary-foreground transition-colors hover:bg-transparent hover:text-primary disabled:cursor-not-allowed disabled:opacity-70"
               disabled={formik.isSubmitting}
             >
               {formik.isSubmitting ? "Sending..." : "Send Message"}

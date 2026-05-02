@@ -30,7 +30,7 @@ export const TextField = React.forwardRef<
     ref,
   ) => {
     const fieldId = id ?? name;
-    const fieldClass = `min-h-12 w-full rounded-2xl border bg-background/50 px-4 py-3 font-[inherit] text-text transition-all duration-200 placeholder:text-text-alt/70 focus:border-primary focus:ring-3 focus:ring-ring/25 ${
+    const fieldClass = `min-h-12 w-full rounded-none border bg-background/50 px-4 py-3 font-[inherit] text-text transition-all duration-200 placeholder:text-text-alt/70 focus:border-primary focus:ring-3 focus:ring-ring/25 ${
       error ? "border-destructive" : "border-border"
     }`;
 
@@ -63,7 +63,10 @@ export const TextField = React.forwardRef<
           />
         )}
         {helperText ? (
-          <span className="text-xs text-destructive" role={error ? "alert" : undefined}>
+          <span
+            className="text-xs text-destructive"
+            role={error ? "alert" : undefined}
+          >
             {helperText}
           </span>
         ) : null}

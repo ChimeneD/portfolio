@@ -36,7 +36,15 @@ const projects = [
     description:
       "An admin dashboard for managing products, orders, and customer data for The PhysiQ Store.",
     // githubRepo: "https://github.com/ChimeneD/physiq-store-admin"
-    stack: ["React", "Tailwind", "GSAP", "MongoDB", "Express", "GraphQL"],
+    stack: [
+      "Next.js",
+      "Tailwind",
+      "Framer Motion",
+      "PostgreSQL",
+      "Spring Boot",
+      "Rest API",
+      "Elastic Search",
+    ],
     demoLink: "https://portal.sdrecruit.co.za/",
   },
   {
@@ -46,7 +54,7 @@ const projects = [
     description:
       "A Creative Partner for companies and Brands that decide to move forward.",
     // githubRepo: "https://github.com/ChimeneD/project-teaser",
-    stack: ["React", "Tailwind"],
+    stack: ["Next.js", "Tailwind"],
     demoLink: "https://www.thecreativesuite.co.za",
   },
   {
@@ -74,7 +82,7 @@ const projects = [
     title: "Aneno Beauty",
     description:
       "Built on faith, discipline, and genuine care, it grew because women felt seen, not just serviced.We believe beauty should never feel rushed, loud, or transactional. It should feel calm. Intentional.Restorative.",
-    stack: ["React", "Tailwind", "GSAP"],
+    stack: ["Next.js", "Tailwind", "GSAP"],
     demoLink: "https://aneno.vercel.app",
   },
   {
@@ -85,7 +93,7 @@ const projects = [
       "My PhysiQ Store curates apparel and accessories for everyday movement, recovery, and comfort. Product availability, material finishes, and pricing may change without notice, so please review sizing, care guidance, and shipping details before placing your order.",
     // githubRepo: "https://github.com/ChimeneD/project-teaser",
     stack: [
-      "React",
+      "Next.js",
       "Tailwind",
       "GSAP",
       "MongoDB",
@@ -93,6 +101,7 @@ const projects = [
       "GraphQL",
       "Paystack",
       "Google Maps API",
+      "Elastic Search",
     ],
     demoLink: "https://platform-frontend-dev-eight.vercel.app",
   },
@@ -103,7 +112,15 @@ const projects = [
     description:
       "My PhysiQ Store Dashboard is an admin interface for managing products, orders, and customer data for The PhysiQ Store. It provides a streamlined experience for administrators to efficiently oversee and maintain the online store's operations.",
     // githubRepo: "https://github.com/ChimeneD/project-teaser",
-    stack: ["React", "Tailwind", "GSAP", "MongoDB", "Express", "GraphQL"],
+    stack: [
+      "Next.js",
+      "Tailwind",
+      "GSAP",
+      "MongoDB",
+      "Express",
+      "GraphQL",
+      "Elastic Search",
+    ],
     demoLink: "https://platform-dashboard-dev.vercel.app",
   },
 
@@ -124,7 +141,7 @@ const projects = [
     description:
       "A nonprofit-first platform focused on storytelling, awareness, and community action.",
     // githubRepo: "https://github.com/ChimeneD/foundation",
-    stack: ["React", "Content Platform", "Campaign UX"],
+    stack: ["Next.js", "Content Platform", "Campaign UX"],
     demoLink: "https://doforgood.netlify.app/",
   },
 ];
